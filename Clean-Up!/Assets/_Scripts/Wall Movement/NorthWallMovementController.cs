@@ -10,11 +10,19 @@ public class NorthWallMovementController : MonoBehaviour
     private string currentWall = "";
     private bool moving = false;
 
+    private Vector2 startTouchPosition;
+    private Vector2 currentPosition;
+    
+    
+
+    public float swipeRange;
+    public float tapRange;
+
     // Start is called before the first frame update
     void Start()
     {
         // Creates an array of all lane positions of the north wall.
-        lane = new []
+        lane = new[]
         {
             lane0.transform.position,
             lane1.transform.position,
@@ -38,25 +46,23 @@ public class NorthWallMovementController : MonoBehaviour
                 {
                     corner = northEastCorner.transform.position;
                     leftLane = corner;
-                    rightLane = lane[i+1];
+                    rightLane = lane[i + 1];
                 }
                 else if (player.transform.position == lane[4])
                 {
                     corner = northWestCorner.transform.position;
-                    leftLane = lane[i-1];
+                    leftLane = lane[i - 1];
                     rightLane = corner;
                 }
                 else
                 {
-                    leftLane = lane[i-1];
-                    rightLane = lane[i+1];
+                    leftLane = lane[i - 1];
+                    rightLane = lane[i + 1];
                 }
-                
+
                 moving = false;
             }
         }
-
-        // Sets the target for the player based on the pressed key and starts movement / rotation based on the target.
         if (Input.GetKeyDown(KeyCode.A) && !moving && currentWall == "north")
         {
             target = leftLane;
@@ -77,11 +83,40 @@ public class NorthWallMovementController : MonoBehaviour
                 northWestCorner.GetComponent<NorthWestCornerRotationController>().rotating = true;
             }
         }
+        // Sets the target for the player based on the pressed key and starts movement / rotation based on the target.
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            startTouchPosition = Input.GetTouch(0).position;
+        }
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved && !moving && currentWall == "north")
+        {
+            currentPosition = Input.GetTouch(0).position;
+            Vector3 Distance = currentPosition - startTouchPosition;
 
+            if (Distance.x < -swipeRange)
+            {
+                target = leftLane;
+                moving = true;
+                if (target == northEastCorner.transform.position)
+                {
+                    northEastCorner.GetComponent<NorthEastCornerRotationController>().rotating = true;
+                }
+
+            }
+            else if (Distance.x > swipeRange)
+            {
+                target = rightLane;
+                moving = true;
+                if (target == northWestCorner.transform.position)
+                {
+                    northWestCorner.GetComponent<NorthWestCornerRotationController>().rotating = true;
+                }
+            }
+        }
         // Moves the player to the target position on the north wall.
         if (moving && target != corner)
         {
             player.transform.position = Vector3.MoveTowards(player.transform.position, target, 7f * Time.smoothDeltaTime);
         }
-    }
+    } 
 }

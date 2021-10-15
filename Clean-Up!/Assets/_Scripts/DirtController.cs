@@ -25,7 +25,7 @@ public class DirtController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && trigger == true)
+        if (Input.GetMouseButton(0) && trigger == true)
         {
           //  Vector3 scaleChange = new Vector3(-0.032f, 0, 0);
             /*Vector3 scaleChange = new Vector3(0, Time.deltaTime * 8f, 0);

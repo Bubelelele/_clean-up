@@ -6,9 +6,22 @@ public class SouthWallMovementController : MonoBehaviour
     public Vector3[] lane;
     public Vector3 target;
 
-    private Vector3 corner, leftLane, rightLane;
+    public Vector3 corner, leftLane, rightLane;
     private string currentWall = "";
     private bool moving = false;
+
+
+    private Vector2 startTouchPosition;
+    private Vector2 currentPosition;
+    
+    
+
+    public float swipeRange;
+    public float tapRange;
+
+    
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +40,8 @@ public class SouthWallMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         currentWall = player.GetComponent<WallChecker>().wall;
 
         // Stores positions of lanes / corners next to the player into variables and stops any movement.
@@ -55,8 +70,6 @@ public class SouthWallMovementController : MonoBehaviour
                 moving = false;
             }
         }
-
-        // Sets the target for the player based on the pressed key and starts movement / rotation based on the target.
         if (Input.GetKeyDown(KeyCode.A) && !moving && currentWall == "south")
         {
             target = leftLane;
@@ -77,6 +90,39 @@ public class SouthWallMovementController : MonoBehaviour
                 southEastCorner.GetComponent<SouthEastCornerRotationController>().rotating = true;
             }
         }
+        // Sets the target for the player based on the pressed key and starts movement / rotation based on the target.
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            startTouchPosition = Input.GetTouch(0).position;
+        }
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved && !moving && currentWall == "south")
+        {
+            currentPosition = Input.GetTouch(0).position;
+            Vector3 Distance = currentPosition - startTouchPosition;
+            
+            if(Distance.x < -swipeRange)
+            {
+                target = leftLane;
+                moving = true;
+                
+                if (target == southWestCorner.transform.position)
+                {
+                    southWestCorner.GetComponent<SouthWestCornerRotationController>().rotating = true;
+                }
+            }
+            else if(Distance.x > swipeRange)
+            {
+                target = rightLane;
+                moving = true;
+                
+                if (target == southEastCorner.transform.position)
+                {
+                    southEastCorner.GetComponent<SouthEastCornerRotationController>().rotating = true;
+                }
+            }
+  
+        } 
 
         // Moves the player to the target position on the south wall.
         if (moving && target != corner)
