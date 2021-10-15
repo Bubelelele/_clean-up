@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     private Component[] Colliders;
     public GameObject pauseMenu;
     static public bool isDead;
-
+ 
     void Start()
     {
             
@@ -23,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
 
         foreach (Rigidbody comp in Rigidbodies)
             comp.useGravity = true;
+        foreach (Rigidbody comp in Rigidbodies)
+            comp.mass = Random.Range(1f, 25f);
 
         Colliders = GetComponentsInChildren<BoxCollider>();
 

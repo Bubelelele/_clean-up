@@ -23,5 +23,11 @@ public class ChairMoving : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        if (PlayerHealth.isDead == true)
+        {
+            this.GetComponent<Rigidbody>().useGravity = true;
+        }
+        else { this.GetComponent<Rigidbody>().useGravity = false; }
     }
 }
