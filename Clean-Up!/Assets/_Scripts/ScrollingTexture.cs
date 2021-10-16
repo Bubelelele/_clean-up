@@ -9,6 +9,7 @@ public class ScrollingTexture : MonoBehaviour
     private Renderer quadRenderer;
     public static float milestone;
     public Text height;
+    public static string heightTotal;
     public static float masterTime;
 
     public float scrollSpeed = 2.27f;
@@ -30,6 +31,7 @@ public class ScrollingTexture : MonoBehaviour
         if (PlayerHealth.isDead == true)
         {
             scrollSpeed = 0f;
+            heightTotal = ((int)quadRenderer.material.mainTextureOffset.y).ToString() + "m";
         }
         Vector2 textureOffset = new Vector2(0f, Time.deltaTime * scrollSpeed);
         quadRenderer.material.mainTextureOffset += textureOffset;

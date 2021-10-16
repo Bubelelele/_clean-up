@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
-    static public float birdRate;
+    static public float chairRate;
 
     void Awake()
     {
-        
+
     }
 
     // Start is called before the first frame update
@@ -20,6 +20,6 @@ public class SpawnController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        birdRate = Random.Range(0.1f, 6f);
+
     }
 }

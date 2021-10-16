@@ -25,7 +25,7 @@ public class DirtController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && trigger == true)
+        if (trigger == true && CleaningAction.startedCleaning == true)
         {
           //  Vector3 scaleChange = new Vector3(-0.032f, 0, 0);
             /*Vector3 scaleChange = new Vector3(0, Time.deltaTime * 8f, 0);

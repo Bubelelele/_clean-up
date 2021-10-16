@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CleaningAction : MonoBehaviour
 {
-    
+    static public bool startedCleaning = false;
+    float cleaningTimer = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,21 +20,32 @@ public class CleaningAction : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         if (transform.localPosition.y > 2.9)
         {
             transform.position = new Vector3(transform.position.x, 2.2f, transform.position.z);
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) || (Input.GetKey(KeyCode.Space)))
         {
+            startedCleaning = true;
+        }
+
+        if (startedCleaning == true && cleaningTimer > 0)
+        {
+            cleaningTimer -= Time.deltaTime;
             Vector3 positionChange = new Vector3(Time.fixedDeltaTime * 0, 0.05f, 0);
             transform.position += positionChange;
         }
 
-        else if (!Input.GetMouseButton(0))
+        if (cleaningTimer < 0)
+        {
+            startedCleaning = false;
+        }
+
+        if (startedCleaning == false)
         {
             transform.position = new Vector3(transform.position.x, 2.2f, transform.position.z);
+            cleaningTimer = 1f;
         }
         
             

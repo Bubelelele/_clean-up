@@ -35,6 +35,8 @@ public class EastWallMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        swipeRange = 25f;
+
         currentWall = player.GetComponent<WallChecker>().wall;
 
         // Stores positions of lanes / corners next to the player into variables and stops any movement.
