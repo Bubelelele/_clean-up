@@ -13,8 +13,8 @@ public class SouthWallMovementController : MonoBehaviour
 
     private Vector2 startTouchPosition;
     private Vector2 currentPosition;
-    
-    
+
+
 
     public float swipeRange;
     public float tapRange;
@@ -40,7 +40,7 @@ public class SouthWallMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        swipeRange = 25f;
 
         currentWall = player.GetComponent<WallChecker>().wall;
 
@@ -105,7 +105,7 @@ public class SouthWallMovementController : MonoBehaviour
             {
                 target = leftLane;
                 moving = true;
-                
+
                 if (target == southWestCorner.transform.position)
                 {
                     southWestCorner.GetComponent<SouthWestCornerRotationController>().rotating = true;
@@ -116,6 +116,7 @@ public class SouthWallMovementController : MonoBehaviour
                 target = rightLane;
                 moving = true;
                 
+
                 if (target == southEastCorner.transform.position)
                 {
                     southEastCorner.GetComponent<SouthEastCornerRotationController>().rotating = true;

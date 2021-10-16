@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -9,6 +10,9 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public GameObject gameOverUI;
+
+    public Text points;
+    public Text height;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -54,6 +58,8 @@ public class PauseMenu : MonoBehaviour
     public void EndGame()
     {
         gameOverUI.SetActive(true);
+        points.text = ScoreController.score.ToString() + "pt";
+        height.text = ScrollingTexture.heightTotal;
         Time.timeScale = 0f;
         GameIsPaused = true;
     }

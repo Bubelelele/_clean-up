@@ -7,7 +7,7 @@ public class ScoreController : MonoBehaviour
 {
     static public bool scoreGained;
     bool plus10animation;
-    int score;
+    static public int score;
     int scoreAddition = 10;
     int streakCount = 0;
     int multiplier = 1;

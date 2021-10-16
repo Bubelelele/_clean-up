@@ -5,25 +5,28 @@ using UnityEngine;
 public class SouthChairSpawner : MonoBehaviour
 {
     public GameObject dirtPrefab;
-    public float spawnRate = 1.5f;
+    float spawnRate = 1.5f;
+    public float spawnRateTimer = 1.5f;
     private Vector3 dirtPos;
     private float Offset = 2.1f;
     public float newMilestone = 50f;
     public GameObject player;
-    public float timer = 5f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        InvokeRepeating("SpawnDirt", 7.5f, spawnRate);
-    }
 
     void Update()
     {
+        spawnRateTimer -= Time.smoothDeltaTime;
+
+        if (spawnRateTimer < 0)
+        {
+            SpawnDirt();
+            spawnRateTimer = spawnRate;
+        }
+
         if (player.GetComponent<WallChecker>().wall == "south" && ScrollingTexture.milestone > newMilestone)
         {
             SpawnLine();
             newMilestone += newMilestone;
+            spawnRate -= 0.1f;
         }
     }
 
