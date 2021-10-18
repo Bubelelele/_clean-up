@@ -12,7 +12,7 @@ public class SouthBirdSpawner : MonoBehaviour
     void Start()
     {
         birdTimer = Random.Range(5f, 20f);
-        birdPos = new Vector3(-20f, 40f, -6.67f);
+        birdPos = new Vector3(-20f, 40f, -7.67f);
     }
 
     void Update()
