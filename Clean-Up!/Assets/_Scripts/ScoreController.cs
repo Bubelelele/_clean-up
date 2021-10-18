@@ -7,23 +7,28 @@ public class ScoreController : MonoBehaviour
 {
     static public bool scoreGained;
     bool plus10animation;
+    bool multiplierAnimation;
     static public int score;
     int scoreAddition = 10;
     int streakCount = 0;
     int multiplier = 1;
     int scoreCombination;
     float animTimer = 1;
+    float animTimer2 = 1;
     private float streakTimer = 11f;
 
     public Text scoreTotal;
     public Text plus10;
-    private Vector3 startPosition;
+    private Vector3 startPositionP10;
+    private Vector3 startPositionMP;
     public Text streak;
+    public Text Multiplier;
 
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = plus10.rectTransform.position;
+        startPositionP10 = plus10.rectTransform.position;
+        startPositionMP = Multiplier.rectTransform.position;
     }
 
     // Update is called once per frame
@@ -47,6 +52,7 @@ public class ScoreController : MonoBehaviour
         if (streakCount == 10)
         {
             multiplier++;
+            multiplierAnimation = true;
             streakCount = 0;
         }
 
@@ -92,8 +98,29 @@ public class ScoreController : MonoBehaviour
             plus10.text = "";
             animTimer = 1;
             plus10.CrossFadeAlpha(1, 0f, false);
-            plus10.rectTransform.position = startPosition;
+            plus10.rectTransform.position = startPositionP10;
             scoreCombination = scoreAddition * multiplier;
+        }
+
+        if (multiplierAnimation == true)
+        {
+            animTimer2 -= Time.smoothDeltaTime;
+            if (animTimer2 >= 0 && multiplier < 10)
+            {
+                Multiplier.text = ("Multiplier get!");
+                Vector3 goingUp = new Vector3(0f, Time.deltaTime * 20f, 0f);
+                Multiplier.transform.position += goingUp;
+                Multiplier.CrossFadeAlpha(0, 1f, false);
+            }
+            else { multiplierAnimation = false; }
+        }
+
+        if (multiplierAnimation == false)
+        {
+            Multiplier.text = "";
+            animTimer2 = 1;
+            Multiplier.CrossFadeAlpha(1, 0f, false);
+            Multiplier.rectTransform.position = startPositionMP;
         }
     }
 }
