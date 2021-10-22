@@ -4451,6 +4451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff460cba5f49192488fa9bd981f4aa46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tapButton: {fileID: 1635661298}
   pauseMenuUI: {fileID: 642562522}
   gameOverUI: {fileID: 1424080410}
   points: {fileID: 249051570}
