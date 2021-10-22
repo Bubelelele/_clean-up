@@ -18,6 +18,7 @@ public class ChairMoving : MonoBehaviour
     {
         Vector3 positionChange = new Vector3(0f, Time.deltaTime * chairSpeed, 0f);
         transform.position += positionChange;
+        transform.Rotate(Random.Range(0F, 360f) * Time.deltaTime, Random.Range(0F, 360f) * Time.deltaTime, Random.Range(0F, 360f) * Time.deltaTime);
 
         if (gameObject.transform.position.y < -5)
         {

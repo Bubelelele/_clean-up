@@ -5,14 +5,14 @@ using UnityEngine;
 public class EastDirtSpawner : MonoBehaviour
 {
     public GameObject dirtPrefab;
-    public float spawnRate = 2f;
+    private float spawnRate = 2.20265f;
     private Vector3 dirtPos;
     private float Offset = 2.1f;
     
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnDirt", 0f, spawnRate);
+        InvokeRepeating("SpawnDirt", 1.55f, spawnRate);
     }
 
     void SpawnDirt()
