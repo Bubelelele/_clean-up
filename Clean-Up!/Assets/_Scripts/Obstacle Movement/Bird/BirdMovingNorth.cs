@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class BirdMovingNorth : MonoBehaviour
 {
     public float dirtSpeed = -1.5f;
+<<<<<<< Updated upstream
     public RawImage Indicator;
+=======
+    public Text Indicator;
+>>>>>>> Stashed changes
     private GameObject player;
     private Vector3 startPosition;
     float randomSpeed;
@@ -34,7 +38,10 @@ public class BirdMovingNorth : MonoBehaviour
             if (indicatorTimer > 0)
             {
                 Indicator.gameObject.SetActive(true);
+<<<<<<< Updated upstream
                 Indicator.CrossFadeAlpha(0f, indicatorTimer, false);
+=======
+>>>>>>> Stashed changes
             }
             else if (indicatorTimer < 0) { Indicator.gameObject.SetActive(false); }
         }
