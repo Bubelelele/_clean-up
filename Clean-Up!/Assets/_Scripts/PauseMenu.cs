@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject tapButton;
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
@@ -62,5 +63,6 @@ public class PauseMenu : MonoBehaviour
         height.text = ScrollingTexture.heightTotal;
         Time.timeScale = 0f;
         GameIsPaused = true;
+        tapButton.SetActive(false);
     }
 }
