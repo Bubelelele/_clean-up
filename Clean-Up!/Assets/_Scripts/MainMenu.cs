@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
         PlayerHealth.isDead = false;
         ScoreController.score = 0;
         PauseMenu.GameIsPaused = false;
-        Time.timeScale = 1f;        
+        Time.timeScale = 1f;
     }
 
     public void QuitGame()
