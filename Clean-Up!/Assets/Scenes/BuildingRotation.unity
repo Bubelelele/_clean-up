@@ -1416,7 +1416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7d555d56dd8ae489a33d3a7987c0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtPrefab: {fileID: 4408492242727847577, guid: fa534da0c5e6a46459a065a6964cc320, type: 3}
+  dirtPrefab: {fileID: 2840548416177277440, guid: 05ed0d89be4b55a49ad9b6d1376b575d, type: 3}
   spawnRateTimer: 1.5
   newMilestone: 50
   player: {fileID: 1088036983}
@@ -2371,7 +2371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b31c361be38ebee4cb26f4f8c454849d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtPrefab: {fileID: 4408492242727847577, guid: fa534da0c5e6a46459a065a6964cc320, type: 3}
+  dirtPrefab: {fileID: 2840548416177277440, guid: 05ed0d89be4b55a49ad9b6d1376b575d, type: 3}
   spawnRateTimer: 1.5
   newMilestone: 50
   player: {fileID: 1088036983}
@@ -2765,7 +2765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177cecf293607ca4cbd5fabc50b7fab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtPrefab: {fileID: 4408492242727847577, guid: fa534da0c5e6a46459a065a6964cc320, type: 3}
+  dirtPrefab: {fileID: 2840548416177277440, guid: 05ed0d89be4b55a49ad9b6d1376b575d, type: 3}
   spawnRateTimer: 1.5
   newMilestone: 50
   player: {fileID: 1088036983}
@@ -3431,7 +3431,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1088036983}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -6171,7 +6171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a9b5e0f8089614a9c9cb3a23afbab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtPrefab: {fileID: 4408492242727847577, guid: fa534da0c5e6a46459a065a6964cc320, type: 3}
+  dirtPrefab: {fileID: 2840548416177277440, guid: 05ed0d89be4b55a49ad9b6d1376b575d, type: 3}
   spawnRateTimer: 1.5
   newMilestone: 50
   player: {fileID: 1088036983}
