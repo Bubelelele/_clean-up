@@ -3431,7 +3431,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1088036983}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -5525,7 +5525,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirtPrefab: {fileID: 4748010169581524894, guid: 11ac4543b75bbf046a3762aacc0da9fe, type: 3}
-  spawnRate: 2
 --- !u!4 &1889732261
 Transform:
   m_ObjectHideFlags: 0
