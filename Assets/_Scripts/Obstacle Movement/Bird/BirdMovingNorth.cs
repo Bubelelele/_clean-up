@@ -46,5 +46,10 @@ public class BirdMovingNorth : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+
+        if (PlayerHealth.isDead)
+        {
+            Indicator.gameObject.SetActive(false);
         }
+    }
 }

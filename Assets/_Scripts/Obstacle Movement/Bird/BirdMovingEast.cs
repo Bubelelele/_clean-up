@@ -10,7 +10,7 @@ public class BirdMovingEast : MonoBehaviour
     private GameObject player;
     private Vector3 startPosition;
     float randomSpeed;
-    float indicatorTimer;
+    static float indicatorTimer;
     private string birdWall = "east";
     private string playerWall;
 
@@ -46,5 +46,10 @@ public class BirdMovingEast : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+
+            if (PlayerHealth.isDead)
+        {
+            Indicator.gameObject.SetActive(false);
+        }
     }
 }

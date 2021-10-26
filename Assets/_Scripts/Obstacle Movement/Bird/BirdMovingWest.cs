@@ -39,12 +39,18 @@ public class BirdMovingWest : MonoBehaviour
             else if (indicatorTimer < 0) { Indicator.gameObject.SetActive(false); }
         }
 
-            Vector3 positionChange = new Vector3(0f, Time.deltaTime * dirtSpeed, Time.deltaTime * randomSpeed);
-            transform.position += positionChange;
+        Vector3 positionChange = new Vector3(0f, Time.deltaTime * dirtSpeed, Time.deltaTime * randomSpeed);
+        transform.position += positionChange;
 
-            if (gameObject.transform.position.y < -5)
-            {
-                Destroy(gameObject);
-            }
+        if (gameObject.transform.position.y < -5)
+        {
+            Destroy(gameObject);
         }
+
+        if (PlayerHealth.isDead)
+        {
+            Indicator.gameObject.SetActive(false);
+        }
+
+    }
  }
