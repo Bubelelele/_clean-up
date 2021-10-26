@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PaperMoving : MonoBehaviour
 {
+    public static bool onScreen = false;
     public float paperSpeed = -1.5f;
     private GameObject obstacleCanvas;
     private Vector3 startPosition;
@@ -20,6 +21,7 @@ public class PaperMoving : MonoBehaviour
     {
         if (hit.CompareTag("Player"))
         {
+            onScreen = true;
             obstacleCanvas.transform.GetChild(0).gameObject.SetActive(true);
             GetComponent<BoxCollider>().enabled = false;
             Destroy(gameObject);

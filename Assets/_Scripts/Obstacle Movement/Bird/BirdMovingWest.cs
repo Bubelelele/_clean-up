@@ -19,7 +19,7 @@ public class BirdMovingWest : MonoBehaviour
     {
         player = GameObject.Find("Player");
         startPosition = transform.position;
-        randomSpeed = Random.Range(2f, 6f);
+        randomSpeed = Random.Range(3.3f, 5.05f);
         indicatorTimer = 2 / randomSpeed;
     }
 

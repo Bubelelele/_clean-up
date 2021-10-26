@@ -22,4 +22,13 @@ public class WestPaperSpawner : MonoBehaviour
         Instantiate(Newspaper, dirtPos, Quaternion.Euler(0f, -90f, 0f));
         Offset = 2.1f;
     }
+
+    public void SpawnPaperLine()
+    {
+        for (int i = 1; i < 6; i++)
+        {
+            dirtPos = new Vector3(transform.position.x - 2.01f, transform.position.y - 1.35f, transform.position.z - Offset * i);
+            Instantiate(Newspaper, dirtPos, Quaternion.Euler(0f, -90f, 0f));
+        }
+    }
 }

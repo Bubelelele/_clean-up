@@ -40,7 +40,9 @@ public class NorthWallMovementController : MonoBehaviour
         currentWall = player.GetComponent<WallChecker>().wall;
 
         // Stores positions of lanes / corners next to the player into variables and stops any movement.
-        for (int i = 0; i < 5; i++)
+        if (!PaperMoving.onScreen)
+        {
+            for (int i = 0; i < 5; i++)
         {
             if (player.transform.position == lane[i])
             {
@@ -120,5 +122,7 @@ public class NorthWallMovementController : MonoBehaviour
         {
             player.transform.position = Vector3.MoveTowards(player.transform.position, target, 7f * Time.smoothDeltaTime);
         }
+        }
+        
     } 
 }

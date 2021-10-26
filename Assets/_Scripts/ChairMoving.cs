@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class ChairMoving : MonoBehaviour
 {
     public float chairSpeed = -1.5f;
@@ -18,7 +17,7 @@ public class ChairMoving : MonoBehaviour
     {
         Vector3 positionChange = new Vector3(0f, Time.deltaTime * chairSpeed, 0f);
         transform.position += positionChange;
-        transform.Rotate(Random.Range(0F, 360f) * Time.deltaTime, Random.Range(0F, 360f) * Time.deltaTime, Random.Range(0F, 360f) * Time.deltaTime);
+        transform.Rotate(Random.Range(0F,30f) * Time.deltaTime, Random.Range(0F, 30f) * Time.deltaTime, Random.Range(0f, 30f) * Time.deltaTime);
 
         if (gameObject.transform.position.y < -5)
         {

@@ -8,6 +8,7 @@ public class HoldAndDrag : MonoBehaviour, IDragHandler
     private RectTransform rectTransform;
     private float timer = 1.5f;
     private bool timerActivate = false;
+    private float moveTimer = 0.5f;
     private Vector3 startPosition;
     private GameObject obstacleCanvas;
 
@@ -29,13 +30,20 @@ public class HoldAndDrag : MonoBehaviour, IDragHandler
         if (timerActivate == true)
         {
             timer -= Time.deltaTime;
+            moveTimer -= Time.deltaTime;
+            if (moveTimer < 0)
+            {
+                PaperMoving.onScreen = false;
+            }
         }
         if (timer < 0)
         {
+            PaperMoving.onScreen = false;
             obstacleCanvas.transform.GetChild(0).gameObject.SetActive(false);
             transform.position = startPosition;
             timerActivate = false;
             timer = 1.5f;
+            moveTimer = 0.5f;
         }
     }
 }

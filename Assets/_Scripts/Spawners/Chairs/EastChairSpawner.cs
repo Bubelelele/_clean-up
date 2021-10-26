@@ -11,6 +11,7 @@ public class EastChairSpawner : MonoBehaviour
     private float Offset = 2.1f;
     public float newMilestone = 50f;
     public GameObject player;
+    public GameObject eastPaperSpawner;
     
     void Update()
     {
@@ -24,7 +25,13 @@ public class EastChairSpawner : MonoBehaviour
 
         if (player.GetComponent<WallChecker>().wall == "east" && ScrollingTexture.milestone > newMilestone)
         {
-            SpawnLine();
+            if (Random.Range(0, 2) == 0)
+            {
+                SpawnLine();
+            } else
+            {
+                eastPaperSpawner.GetComponent<EastPaperSpawner>().SpawnPaperLine();
+            }
             newMilestone += newMilestone;
             spawnRate -= 0.1f;
         }
@@ -35,7 +42,7 @@ public class EastChairSpawner : MonoBehaviour
         for(int i = 1; i < 6; i++)
         {
             dirtPos = new Vector3(transform.position.x + 0.01f, transform.position.y - 1.35f, transform.position.z + Offset * i);
-            Instantiate(dirtPrefab, dirtPos, Quaternion.identity);
+            Instantiate(dirtPrefab, dirtPos, Quaternion.Euler(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f)));
         }
     }
 
@@ -43,7 +50,7 @@ public class EastChairSpawner : MonoBehaviour
     {
         Offset *= Random.Range(1, 6);
         dirtPos = new Vector3(transform.position.x + 0.01f, transform.position.y - 1.35f, transform.position.z + Offset);
-        Instantiate(dirtPrefab, dirtPos, Quaternion.identity);
+        Instantiate(dirtPrefab, dirtPos, Quaternion.Euler(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f)));
         Offset = 2.1f;
     }
 }
