@@ -1548,6 +1548,7 @@ MonoBehaviour:
   spawnRateTimer: 1.5
   newMilestone: 50
   player: {fileID: 1088036983}
+  southPaperSpawner: {fileID: 23515215}
 --- !u!4 &472522003
 Transform:
   m_ObjectHideFlags: 0
@@ -2502,6 +2503,7 @@ MonoBehaviour:
   spawnRateTimer: 1.5
   newMilestone: 50
   player: {fileID: 1088036983}
+  northPaperSpawner: {fileID: 1441489775}
 --- !u!4 &830519434
 Transform:
   m_ObjectHideFlags: 0
@@ -2896,6 +2898,7 @@ MonoBehaviour:
   spawnRateTimer: 1.5
   newMilestone: 50
   player: {fileID: 1088036983}
+  eastPaperSpawner: {fileID: 1149677005}
 --- !u!4 &910752828
 Transform:
   m_ObjectHideFlags: 0
@@ -6489,6 +6492,7 @@ MonoBehaviour:
   spawnRateTimer: 1.5
   newMilestone: 50
   player: {fileID: 1088036983}
+  westPaperSpawner: {fileID: 2123231061}
 --- !u!4 &2100944093
 Transform:
   m_ObjectHideFlags: 0
