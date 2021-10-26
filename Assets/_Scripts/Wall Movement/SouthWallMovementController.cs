@@ -40,6 +40,7 @@ public class SouthWallMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         swipeRange = 25f;
 
         currentWall = player.GetComponent<WallChecker>().wall;
@@ -129,6 +130,5 @@ public class SouthWallMovementController : MonoBehaviour
         if (moving && target != corner)
         {
             player.transform.position = Vector3.MoveTowards(player.transform.position, target, 7f * Time.smoothDeltaTime);
-        }
-    }
+        }  }
 }

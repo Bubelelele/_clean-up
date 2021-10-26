@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: -1448839245815406489}
   m_Layer: 0
   m_Name: BirdPrefabNorth
-  m_TagString: Untagged
+  m_TagString: KillingObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

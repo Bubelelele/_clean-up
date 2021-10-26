@@ -16,20 +16,23 @@ public class PlayerHealth : MonoBehaviour
 
     public void OnTriggerEnter(Collider gameObject)
     {
-        transform.Find("Cleaner").gameObject.SetActive(false);
-        isDead = true;
+        if (gameObject.CompareTag("KillingObstacle"))
+        {
+            transform.Find("Cleaner").gameObject.SetActive(false);
+            isDead = true;
 
-        Rigidbodies = GetComponentsInChildren<Rigidbody>();
+            Rigidbodies = GetComponentsInChildren<Rigidbody>();
 
-        foreach (Rigidbody comp in Rigidbodies)
-            comp.useGravity = true;
-        foreach (Rigidbody comp in Rigidbodies)
-            comp.mass = Random.Range(1f, 25f);
+            foreach (Rigidbody comp in Rigidbodies)
+                comp.useGravity = true;
+            foreach (Rigidbody comp in Rigidbodies)
+                comp.mass = Random.Range(1f, 25f);
 
-        Colliders = GetComponentsInChildren<BoxCollider>();
+            Colliders = GetComponentsInChildren<BoxCollider>();
 
-        foreach (BoxCollider comp in Colliders)
-            comp.enabled = true;
+            foreach (BoxCollider comp in Colliders)
+                comp.enabled = true;
+        }
     }
 
     // Update is called once per frame
