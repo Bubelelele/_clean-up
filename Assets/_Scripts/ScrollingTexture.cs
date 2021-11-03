@@ -11,6 +11,7 @@ public class ScrollingTexture : MonoBehaviour
     public Text height;
     public static string heightTotal;
     public static float masterTime;
+    public int lbHeight;
 
     public float scrollSpeed = 2.27f;
 
@@ -32,6 +33,9 @@ public class ScrollingTexture : MonoBehaviour
         {
             scrollSpeed = 0f;
             heightTotal = ((int)quadRenderer.material.mainTextureOffset.y).ToString() + "m";
+            lbHeight = ((int)quadRenderer.material.mainTextureOffset.y);
+            PlayerPrefs.SetInt("height", lbHeight);
+            PlayerPrefs.SetInt("score", ScoreController.score);
         }
         Vector2 textureOffset = new Vector2(0f, Time.deltaTime * scrollSpeed);
         quadRenderer.material.mainTextureOffset += textureOffset;

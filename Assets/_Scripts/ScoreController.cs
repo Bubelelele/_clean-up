@@ -71,6 +71,7 @@ public class ScoreController : MonoBehaviour
         }
 
         scoreTotal.text = (score.ToString() + "pt");
+        
         if (scoreGained == true)
         {
             streakTimer = 10f;
