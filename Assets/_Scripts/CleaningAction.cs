@@ -25,10 +25,10 @@ public class CleaningAction : MonoBehaviour
             transform.position = new Vector3(transform.position.x, 2.2f, transform.position.z);
         }
 
-        /*if (Input.GetMouseButton(0) || (Input.GetKey(KeyCode.Space)))
+        if (Input.GetKey(KeyCode.Space))
         {
             startedCleaning = true;
-        }*/
+        }
 
         if (startedCleaning == true && cleaningTimer > 0)
         {
