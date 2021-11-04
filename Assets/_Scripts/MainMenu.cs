@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("BuildingRotation");
+        PaperMoving.onScreen = false;
         PlayerHealth.isDead = false;
         ScoreController.score = 0;
         PauseMenu.GameIsPaused = false;
