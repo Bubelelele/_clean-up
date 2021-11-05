@@ -16,6 +16,7 @@ public class ScoreController : MonoBehaviour
     float animTimer = 1;
     float animTimer2 = 1;
     private float streakTimer = 11f;
+    private float rockstarTimer = 30f;
 
     public Text scoreTotal;
     public Text plus10;
@@ -34,7 +35,17 @@ public class ScoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        
+        if (JanitorRockstar.rockstarActivated == true)
+        {
+            rockstarTimer -= Time.deltaTime;
+            multiplier = 12;
+            streakTimer = 11f;
+            if (rockstarTimer < 0)
+            {
+                rockstarTimer = 30f;
+                JanitorRockstar.rockstarActivated = false;
+            }
+        }
 
         if (streakTimer < 1 && multiplier > 1)
         {
@@ -56,7 +67,7 @@ public class ScoreController : MonoBehaviour
             streakCount = 0;
         }
 
-        if (multiplier > 10)
+        if (multiplier > 10 && JanitorRockstar.rockstarActivated == false)
         {
             multiplier = 10;
         }
