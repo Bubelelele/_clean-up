@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chairSpeed: -15
+  bucket: {fileID: 5647304372987630562, guid: c83ad0dacea7bdd4cac279218691900f, type: 3}
 --- !u!54 &4408010876166150688
 Rigidbody:
   m_ObjectHideFlags: 0

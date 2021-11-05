@@ -34,9 +34,9 @@ public class PlayerHealth : MonoBehaviour
             foreach (BoxCollider comp in Colliders)
                 comp.enabled = true;
         }
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (gameObject.transform.position.y < -130)
