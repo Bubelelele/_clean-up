@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
         if (gameObject.CompareTag("KillingObstacle"))
         {
             transform.Find("Cleaner").gameObject.SetActive(false);
+            transform.Find("WideCleaner").gameObject.SetActive(false);
             isDead = true;
 
             Rigidbodies = GetComponentsInChildren<Rigidbody>();
