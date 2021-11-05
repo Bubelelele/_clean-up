@@ -24,6 +24,7 @@ public class ScoreController : MonoBehaviour
     private Vector3 startPositionMP;
     public Text streak;
     public Text Multiplier;
+    public AudioSource rockstarMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,7 @@ public class ScoreController : MonoBehaviour
     void Update()
     {        
         if (JanitorRockstar.rockstarActivated == true)
-        {
+        { 
             rockstarTimer -= Time.deltaTime;
             multiplier = 12;
             streakTimer = 11f;
@@ -44,7 +45,12 @@ public class ScoreController : MonoBehaviour
             {
                 rockstarTimer = 30f;
                 JanitorRockstar.rockstarActivated = false;
+                rockstarMusic.Stop();
             }
+        } else if (PlayerHealth.isDead == true)
+        {
+            rockstarTimer = 0;
+            multiplier = 1;
         }
 
         if (streakTimer < 1 && multiplier > 1)

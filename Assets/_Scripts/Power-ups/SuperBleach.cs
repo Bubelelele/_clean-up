@@ -6,7 +6,7 @@ public class SuperBleach : MonoBehaviour
 {
     private Vector3 startPosition, moveUpwards;
     public bool bleachActivated = false;
-    public static bool bleachClean = false;
+    public static bool bleachClean = false, testActivated = false;
     public BoxCollider bleachCollider;
     public GameObject Player, Cleaner, Particles;
 
@@ -20,6 +20,11 @@ public class SuperBleach : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (testActivated == true)
+        {
+            bleachActivated = true;
+            testActivated = false;
+        }
         if (bleachActivated == true)
         {
             Particles.gameObject.SetActive(true);
