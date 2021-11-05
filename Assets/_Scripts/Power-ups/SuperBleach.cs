@@ -8,12 +8,13 @@ public class SuperBleach : MonoBehaviour
     public bool bleachActivated = false;
     public static bool bleachClean = false;
     public BoxCollider bleachCollider;
-    public GameObject Player, Cleaner;
+    public GameObject Player, Cleaner, Particles;
 
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
+        Particles.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class SuperBleach : MonoBehaviour
     {
         if (bleachActivated == true)
         {
+            Particles.gameObject.SetActive(true);
             gameObject.transform.parent = null;
             bleachCollider.enabled = true;
             bleachClean = true;
@@ -29,6 +31,7 @@ public class SuperBleach : MonoBehaviour
         }
         if (transform.position.y > 125)
         {
+            Particles.gameObject.SetActive(false);
             bleachCollider.enabled = false;
             bleachClean = false;
             bleachActivated = false;
