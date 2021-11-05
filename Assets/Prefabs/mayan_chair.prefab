@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chairSpeed: -15
+  bucket: {fileID: 5647304372987630562, guid: c83ad0dacea7bdd4cac279218691900f, type: 3}
 --- !u!54 &4956400441265592965
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,5 +126,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.76
-  m_Center: {x: 0.009116173, y: -0.3, z: -0.09388864}
+  m_Radius: 0.94775677
+  m_Center: {x: 0.009116173, y: -0.4877566, z: -0.09388852}
