@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class DirtController : MonoBehaviour
 {
-    bool trigger = false;
+    public bool trigger = false;
     Color color;
     public Text scoreTotal;
 
@@ -18,14 +18,14 @@ public class DirtController : MonoBehaviour
     }
 
     // Code runs when colliding with anything that has a collider + rigibody.
-    private void OnTriggerEnter(Collider gameObject)
+    private void OnTriggerEnter(Collider col)
     {
         trigger = true;
     }
 
     void Update()
     {
-        if (trigger == true && CleaningAction.startedCleaning == true)
+        if (trigger == true && SuperBleach.bleachClean == true || trigger == true && CleaningAction.startedCleaning == true)
         {
           //  Vector3 scaleChange = new Vector3(-0.032f, 0, 0);
             /*Vector3 scaleChange = new Vector3(0, Time.deltaTime * 8f, 0);
