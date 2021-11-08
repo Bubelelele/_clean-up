@@ -7032,7 +7032,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 32, y: -55.180054}
+  m_AnchoredPosition: {x: 40, y: -55.180054}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630567313
@@ -8179,6 +8179,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926171098}
   m_CullTransparentMesh: 1
+--- !u!1 &939929264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939929266}
+  - component: {fileID: 939929265}
+  m_Layer: 0
+  m_Name: Pick-up Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &939929265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939929264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba3561714e8dea4a9fb0f694a02ec9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockstarPrefab: {fileID: 8321259151508883006, guid: 37deb8a2ffe181f4d8c5fe9f1b5cbbdf, type: 3}
+  bucketPrefab: {fileID: 8722080438122671005, guid: 009b09ad71e2bbb45a8530cfc3ff7c7f, type: 3}
+  superBleachPrefab: {fileID: 3340036118573135146, guid: 9dccbec4ce5cf8b47bddac26daec828d, type: 3}
+--- !u!4 &939929266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939929264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 350, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -12111,6 +12157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BleachPickup
       objectReference: {fileID: 0}
+    - target: {fileID: 3340036118573135146, guid: 9dccbec4ce5cf8b47bddac26daec828d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dccbec4ce5cf8b47bddac26daec828d, type: 3}
 --- !u!1001 &3917433909515566142
@@ -12167,6 +12217,10 @@ PrefabInstance:
     - target: {fileID: 8722080438122671005, guid: 009b09ad71e2bbb45a8530cfc3ff7c7f, type: 3}
       propertyPath: m_Name
       value: BucketPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722080438122671005, guid: 009b09ad71e2bbb45a8530cfc3ff7c7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 009b09ad71e2bbb45a8530cfc3ff7c7f, type: 3}
@@ -12334,6 +12388,10 @@ PrefabInstance:
     - target: {fileID: 8321259151508883006, guid: 37deb8a2ffe181f4d8c5fe9f1b5cbbdf, type: 3}
       propertyPath: m_Name
       value: RockstarPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321259151508883006, guid: 37deb8a2ffe181f4d8c5fe9f1b5cbbdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8660665835093204100, guid: 37deb8a2ffe181f4d8c5fe9f1b5cbbdf, type: 3}
       propertyPath: m_RootOrder
