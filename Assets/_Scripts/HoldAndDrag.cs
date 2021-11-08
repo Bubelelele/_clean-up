@@ -46,7 +46,7 @@ public class HoldAndDrag : MonoBehaviour, IDragHandler
             moveTimer = 0.5f;
         }
 
-        if (PlayerHealth.isDead)
+        if (AnimationManager.isDead)
         {
             PaperMoving.onScreen = false;
         }

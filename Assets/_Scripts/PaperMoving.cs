@@ -40,7 +40,7 @@ public class PaperMoving : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (PlayerHealth.isDead == true)
+        if (AnimationManager.isDead == true)
         {
             obstacleCanvas.transform.GetChild(0).gameObject.SetActive(false);
         }

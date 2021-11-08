@@ -16,7 +16,7 @@ public class DirtMoving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerHealth.isDead == false)
+        if (AnimationManager.isDead == false)
             {
 
             Vector3 positionChange = new Vector3(0f, Time.deltaTime * dirtSpeed, 0f);

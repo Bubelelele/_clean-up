@@ -29,7 +29,7 @@ public class ScrollingTexture : MonoBehaviour
             Time.timeScale = masterTime;
         }
         
-        if (PlayerHealth.isDead == true)
+        if (AnimationManager.isDead == true)
         {
             scrollSpeed = 0f;
             heightTotal = ((int)quadRenderer.material.mainTextureOffset.y).ToString() + "m";
