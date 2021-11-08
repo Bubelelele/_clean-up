@@ -20,7 +20,7 @@ public class CleaningAction : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (PlayerHealth.isDead == false)
+        if (AnimationManager.isDead == false)
         {
             if (transform.localPosition.y > 2.9)
             {
@@ -54,7 +54,7 @@ public class CleaningAction : MonoBehaviour
     }
     public void Clean()
     {
-        if (PlayerHealth.isDead == false)
+        if (AnimationManager.isDead == false)
         {
             startedCleaning = true;
         }

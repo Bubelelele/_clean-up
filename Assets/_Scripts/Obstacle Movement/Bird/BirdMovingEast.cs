@@ -47,7 +47,7 @@ public class BirdMovingEast : MonoBehaviour
                 Destroy(gameObject);
             }
 
-            if (PlayerHealth.isDead)
+            if (AnimationManager.isDead)
         {
             Indicator.gameObject.SetActive(false);
         }

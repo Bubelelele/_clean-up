@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("BuildingRotation");
         PaperMoving.onScreen = false;
-        PlayerHealth.isDead = false;
+        AnimationManager.isDead = false;
         ScoreController.score = 0;
         PauseMenu.GameIsPaused = false;
         Time.timeScale = 1f;

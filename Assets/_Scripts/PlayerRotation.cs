@@ -16,7 +16,7 @@ public class PlayerRotation : MonoBehaviour
     void Update()
     {
         
-        if (PlayerHealth.isDead == true)
+        if (AnimationManager.isDead == true && AnimationManager.whichDeath == 0)
         {
             transform.Rotate(0f, 0f, rotatePlayer * Time.deltaTime);
             //transform.position = new Vector3(0f, 2f * Time.deltaTime, 0f);
