@@ -52,8 +52,6 @@ public class ScrollingTexture : MonoBehaviour
             masterTime = 3f;
         }
 
-        Debug.Log(masterTime);
-
         height.text = ((int)quadRenderer.material.mainTextureOffset.y).ToString() + "m";
     }
 }

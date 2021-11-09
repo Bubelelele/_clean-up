@@ -54,7 +54,7 @@ public class HoldAndDrag : MonoBehaviour, IDragHandler
             Player.GetComponent<CapsuleCollider>().enabled = false;
         }
 
-        if (PlayerHealth.isDead)
+        if (AnimationManager.isDead)
         {
             PaperMoving.onScreen = false;
         }
