@@ -21,7 +21,6 @@ public class BucketPowerUp : MonoBehaviour
             bucket.SetActive(true);
             bucketPickedup = false;
         }
-       
     }
    
 

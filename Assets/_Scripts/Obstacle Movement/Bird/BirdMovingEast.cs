@@ -17,7 +17,7 @@ public class BirdMovingEast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("PlayerHandler");
         startPosition = transform.position;
         randomSpeed = Random.Range(3.3f, 5.05f);
         indicatorTimer = 2 / randomSpeed;
@@ -50,6 +50,16 @@ public class BirdMovingEast : MonoBehaviour
             if (AnimationManager.isDead)
         {
             Indicator.gameObject.SetActive(false);
+        }
+    }
+
+    public void OnTriggerEnter(Collider hit)
+    {
+        if (hit.CompareTag("Bucket"))
+        {
+            BucketPowerUp.bucketDestroyed = true;
+            Destroy(gameObject);
+
         }
     }
 }

@@ -20,7 +20,7 @@ public class PickupSpawnerController : MonoBehaviour
             SpawnPickup(transform.position + new Vector3(0f, 0f, spawnOffset));
             SpawnPickup(transform.position + new Vector3(0f, 0f, -spawnOffset));
 
-            newMilestone += ScrollingTexture.milestone;
+            newMilestone += 150f;
         }
     }
 

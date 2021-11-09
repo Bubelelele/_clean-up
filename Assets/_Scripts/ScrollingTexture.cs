@@ -43,9 +43,16 @@ public class ScrollingTexture : MonoBehaviour
         if (quadRenderer.material.mainTextureOffset.y > milestone)
         {
             //scrollSpeed *= 1.5f;
-            masterTime *= 1.25f;
-            milestone += milestone;
+            masterTime *= 1.15f;
+            milestone += 100f;
         }
+
+        if (masterTime > 3f)
+        {
+            masterTime = 3f;
+        }
+
+        Debug.Log(masterTime);
 
         height.text = ((int)quadRenderer.material.mainTextureOffset.y).ToString() + "m";
     }

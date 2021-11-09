@@ -17,7 +17,7 @@ public class BirdMovingWest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("PlayerHandler");
         startPosition = transform.position;
         randomSpeed = Random.Range(3.3f, 5.05f);
         indicatorTimer = 2 / randomSpeed;
@@ -39,7 +39,7 @@ public class BirdMovingWest : MonoBehaviour
             else if (indicatorTimer < 0) { Indicator.gameObject.SetActive(false); }
         }
 
-        Vector3 positionChange = new Vector3(0f, Time.deltaTime * dirtSpeed, Time.deltaTime * randomSpeed);
+        Vector3 positionChange = new Vector3(0f, Time.deltaTime * dirtSpeed, -Time.deltaTime * randomSpeed);
         transform.position += positionChange;
 
         if (gameObject.transform.position.y < -5)
@@ -52,5 +52,15 @@ public class BirdMovingWest : MonoBehaviour
             Indicator.gameObject.SetActive(false);
         }
 
+    }
+
+    public void OnTriggerEnter(Collider hit)
+    {
+        if (hit.CompareTag("Bucket"))
+        {
+            BucketPowerUp.bucketDestroyed = true;
+            Destroy(gameObject);
+
+        }
     }
  }

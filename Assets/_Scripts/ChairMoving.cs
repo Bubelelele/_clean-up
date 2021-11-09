@@ -5,14 +5,24 @@ public class ChairMoving : MonoBehaviour
 {
     public float chairSpeed = -1.5f;
     private Vector3 startPosition;
+    public GameObject bucket;
 
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
+        bucket = GameObject.Find("Bucketprefab");
     }
 
-    // Update is called once per frame
+    public void OnTriggerEnter(Collider hit)
+    {
+        if (hit.CompareTag("Bucket"))
+        {
+            BucketPowerUp.bucketDestroyed = true;
+            Destroy(gameObject);
+
+        }
+    }
     void Update()
     {
         Vector3 positionChange = new Vector3(0f, Time.deltaTime * chairSpeed, 0f);
@@ -23,11 +33,14 @@ public class ChairMoving : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-        if (AnimationManager.isDead == true)
+
+
+
+        if (PlayerHealth.isDead == true)
         {
             this.GetComponent<Rigidbody>().useGravity = true;
         }
         else { this.GetComponent<Rigidbody>().useGravity = false; }
+
     }
 }

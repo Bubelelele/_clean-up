@@ -45,6 +45,7 @@ public class ScoreController : MonoBehaviour
             {
                 rockstarTimer = 30f;
                 JanitorRockstar.rockstarActivated = false;
+                
                 rockstarMusic.Stop();
             }
         } else if (PlayerHealth.isDead == true)
