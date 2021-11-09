@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: f8f047c68720e8d47b3e4380eb4d382d
   - enabled: 1
-    path: Assets/Scenes/BuildingRotation.unity
+    path: Assets/Scenes/BuildingRotationMain.unity
     guid: b55e9797078d06742b670941b74ab7eb
   - enabled: 1
     path: Assets/HighscoreTable/GameScene_HighscoreTable.unity
