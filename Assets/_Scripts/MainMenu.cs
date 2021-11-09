@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("BuildingRotation");
+        SceneManager.LoadScene("BuildingRotationMain");
         PaperMoving.onScreen = false;
         AnimationManager.isDead = false;
         ScoreController.score = 0;
