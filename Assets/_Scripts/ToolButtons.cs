@@ -16,8 +16,6 @@ public class ToolButtons : MonoBehaviour
     private float wideTimer = 0f;
     private float longCooldown = 0f;
     private float wideCooldown = 0f;
-    
-
 
     // Start is called before the first frame update
     void Start()
@@ -50,16 +48,18 @@ public class ToolButtons : MonoBehaviour
         if (wideTimer > 0f)
         {
             wideTimer -= Time.deltaTime;
+            wideButton.GetComponent<Image>().fillAmount = wideTimer / 30f;
         }
 
         if (wideCooldown > 0f)
         {
             wideCooldown -= Time.deltaTime;
-            wideButton.SetActive(false);
+            wideButton.GetComponent<Button>().interactable = false;
+            wideButton.GetComponent<Image>().fillAmount = 1 - wideCooldown / 60f;
         }
         if (wideCooldown < 0f)
         {
-            wideButton.SetActive(true);
+            wideButton.GetComponent<Button>().interactable = true;
         }
 
         if (longTimer < 0f)
@@ -73,16 +73,18 @@ public class ToolButtons : MonoBehaviour
         if (longTimer > 0f)
         {
             longTimer -= Time.deltaTime;
+            longButton.GetComponent<Image>().fillAmount = longTimer / 30f;
         }
 
         if (longCooldown > 0f)
         {
             longCooldown -= Time.deltaTime;
-            longButton.SetActive(false);
+            longButton.GetComponent<Button>().interactable = false;
+            longButton.GetComponent<Image>().fillAmount = 1 - longCooldown / 60f;
         }
         if (longCooldown < 0f)
         {
-            longButton.SetActive(true);
+            longButton.GetComponent<Button>().interactable = true;
         }
 
         Debug.Log("longCooldown: " + longCooldown);
@@ -90,6 +92,12 @@ public class ToolButtons : MonoBehaviour
         Debug.Log("longCooldown: " + longCooldown);
         Debug.Log("longTimer: " + longTimer);
         Debug.Log("wideTimer: " + wideTimer);
+
+        if (AnimationManager.isDead)
+        {
+            longButton.SetActive(false);
+            wideButton.SetActive(false);
+        }
         
     }
     
@@ -107,7 +115,7 @@ public class ToolButtons : MonoBehaviour
         wideCooldown = 0f;
         wideTimer = 30f;
 
-        wideButton.SetActive(false);
+        wideButton.GetComponent<Button>().interactable = false;
     }
     public void LongTool()
     {
@@ -117,6 +125,6 @@ public class ToolButtons : MonoBehaviour
         longCooldown = 0f;
         longTimer = 30f;
 
-        longButton.SetActive(false);
+        longButton.GetComponent<Button>().interactable = false;
     }
 }
