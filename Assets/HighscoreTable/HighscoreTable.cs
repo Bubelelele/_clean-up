@@ -29,7 +29,7 @@ public class HighscoreTable : MonoBehaviour
 
     private void Awake()
     {
-        
+        getName.text = PlayerPrefs.GetString("lastName", "");
         scoreCombination = PlayerPrefs.GetInt("score").ToString() + "pts, " + PlayerPrefs.GetInt("height").ToString() + "m";
         displayScore.text = scoreCombination;
 
@@ -144,6 +144,7 @@ public class HighscoreTable : MonoBehaviour
 
     public void SubmitButton()
     {
+        PlayerPrefs.SetString("lastName", getName.text);
         AddHighscoreEntry(PlayerPrefs.GetInt("score"), PlayerPrefs.GetInt("height"), getName.text);
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);

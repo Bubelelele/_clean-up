@@ -5,8 +5,8 @@ using UnityEngine;
 public class SouthChairSpawner : MonoBehaviour
 {
     public GameObject dirtPrefab;
-    float spawnRate = 1.5f;
-    public float spawnRateTimer = 1.5f;
+    float spawnRate = 2.2f;
+    public float spawnRateTimer = 2.2f;
     private Vector3 dirtPos;
     private float Offset = 2.1f;
     public float newMilestone = 50f;

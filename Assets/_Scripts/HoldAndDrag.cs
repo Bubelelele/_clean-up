@@ -11,6 +11,7 @@ public class HoldAndDrag : MonoBehaviour, IDragHandler
     private float moveTimer = 0.5f;
     private Vector3 startPosition;
     private GameObject obstacleCanvas;
+    public GameObject Player;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class HoldAndDrag : MonoBehaviour, IDragHandler
             moveTimer -= Time.deltaTime;
             if (moveTimer < 0)
             {
+                Player.GetComponent<CapsuleCollider>().enabled = true;
                 PaperMoving.onScreen = false;
             }
         }
@@ -46,7 +48,13 @@ public class HoldAndDrag : MonoBehaviour, IDragHandler
             moveTimer = 0.5f;
         }
 
-        if (AnimationManager.isDead)
+        if (PaperMoving.onScreen == true)
+        {
+        //    Time.timeScale /= 2; //Produces an interesting result where it acts more as a slowdown. It seems to resume to the previous speed afterwards but I don't know for sure. Left in for testing purposes.
+            Player.GetComponent<CapsuleCollider>().enabled = false;
+        }
+
+        if (PlayerHealth.isDead)
         {
             PaperMoving.onScreen = false;
         }
