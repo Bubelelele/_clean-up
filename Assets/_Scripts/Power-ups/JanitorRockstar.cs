@@ -22,6 +22,7 @@ public class JanitorRockstar : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            rockstarMusic = GameObject.Find("Audio").GetComponent<AudioSource>();
             rockstarMusic.Play();
             rockstarActivated = true;
             Destroy(gameObject);
