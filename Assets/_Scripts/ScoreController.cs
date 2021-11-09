@@ -16,6 +16,7 @@ public class ScoreController : MonoBehaviour
     float animTimer = 1;
     float animTimer2 = 1;
     private float streakTimer = 11f;
+    private float rockstarTimer = 30f;
 
     public Text scoreTotal;
     public Text plus10;
@@ -23,6 +24,7 @@ public class ScoreController : MonoBehaviour
     private Vector3 startPositionMP;
     public Text streak;
     public Text Multiplier;
+    public AudioSource rockstarMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,22 @@ public class ScoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        
+        if (JanitorRockstar.rockstarActivated == true)
+        { 
+            rockstarTimer -= Time.deltaTime;
+            multiplier = 12;
+            streakTimer = 11f;
+            if (rockstarTimer < 0)
+            {
+                rockstarTimer = 30f;
+                JanitorRockstar.rockstarActivated = false;
+                rockstarMusic.Stop();
+            }
+        } else if (PlayerHealth.isDead == true)
+        {
+            rockstarTimer = 0;
+            multiplier = 1;
+        }
 
         if (streakTimer < 1 && multiplier > 1)
         {
@@ -56,7 +73,7 @@ public class ScoreController : MonoBehaviour
             streakCount = 0;
         }
 
-        if (multiplier > 10)
+        if (multiplier > 10 && JanitorRockstar.rockstarActivated == false)
         {
             multiplier = 10;
         }
