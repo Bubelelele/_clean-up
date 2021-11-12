@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        AudioController.menuMusic.mute = true;
+        AudioController.clickSound.Play();
         SceneManager.LoadScene("BuildingRotationMain");
         PaperMoving.onScreen = false;
         AnimationManager.isDead = false;
@@ -24,16 +26,19 @@ public class MainMenu : MonoBehaviour
 
     public void Leaderboard()
     {
+        AudioController.clickSound.Play();
         SceneManager.LoadScene(2);
     }
     public void LeaderboardFromMenu()
     {
+        AudioController.clickSound.Play();
         SceneManager.LoadScene(3);
 
     }
 
     public void LoadMenu()
     {
+        AudioController.clickSound.Play();
         SceneManager.LoadScene("MainMenuScene");
     }
 }
