@@ -58,6 +58,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void EndGame()
     {
+        AudioController.gOverOffice.Play();
         gameOverUI.SetActive(true);
         points.text = ScoreController.score.ToString() + "pt";
         height.text = ScrollingTexture.heightTotal;

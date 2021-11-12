@@ -8,6 +8,7 @@ public class BleachPickup : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            AudioController.superBleach.Play();
             SuperBleach.testActivated = true;
             Destroy(gameObject);
         }
