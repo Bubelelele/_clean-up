@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public GameObject gameOverUI;
+    public GameObject betterScoreGroup;
 
     public Text points;
     public Text height;
@@ -64,5 +65,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
         tapButton.SetActive(false);
+        if (ScoreController.score > PlayerPrefs.GetInt("score"))
+        {
+            betterScoreGroup.SetActive(true);
+        }
+        else { betterScoreGroup.SetActive(false); }
+        Debug.Log("Score: " + ScoreController.score);
+        Debug.Log("PP Score: " + PlayerPrefs.GetInt("score"));
     }
 }
