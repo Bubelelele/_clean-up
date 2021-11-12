@@ -45,17 +45,17 @@ public class PickupSpawnerController : MonoBehaviour
     {
         float chance = Random.Range(0f, 100f);
 
-        if (chance > 0f && chance < 60f)
+        if (chance > 0f && chance < 50f)
         {
-            pickupToSpawn = rockstarPrefab;
+            pickupToSpawn = superBleachPrefab;
         }
-        else if (chance >= 60f && chance < 90f)
+        else if (chance >= 50f && chance < 80f)
         {
             pickupToSpawn = bucketPrefab;
         }
         else
         {
-            pickupToSpawn = superBleachPrefab;
+            pickupToSpawn = rockstarPrefab;
         }
 
         GameObject pickup = Instantiate(pickupToSpawn, targetPosition, Quaternion.identity);
