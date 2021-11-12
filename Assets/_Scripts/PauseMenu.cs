@@ -36,7 +36,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        Time.timeScale = ScrollingTexture.masterTime;
+        Time.timeScale = 1f;
         GameIsPaused = false;
     }
 

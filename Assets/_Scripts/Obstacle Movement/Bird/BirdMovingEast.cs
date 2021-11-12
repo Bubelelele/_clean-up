@@ -39,7 +39,7 @@ public class BirdMovingEast : MonoBehaviour
             else if (indicatorTimer < 0) { Indicator.gameObject.SetActive(false); }
         }
 
-        Vector3 positionChange = new Vector3(0f, Time.deltaTime * dirtSpeed, Time.deltaTime * randomSpeed);
+        Vector3 positionChange = new Vector3(0f, Time.deltaTime * dirtSpeed * MasterTime.masterTime, Time.deltaTime * randomSpeed * MasterTime.masterTime);
             transform.position += positionChange;
 
             if (gameObject.transform.position.y < -5)
