@@ -18,7 +18,7 @@ public class AudioController : MonoBehaviour
         superBleach = psuperBleach;
         birdImpact = pbirdImpact;
 
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainMenuScene") && !menuMusic.isPlaying)
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainMenuUIScene") && !menuMusic.isPlaying)
         {
             menuMusic.Play();
         }

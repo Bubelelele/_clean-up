@@ -39,6 +39,6 @@ public class MainMenu : MonoBehaviour
     public void LoadMenu()
     {
         AudioController.clickSound.Play();
-        SceneManager.LoadScene("MainMenuScene");
+        SceneManager.LoadScene("MainMenuUIScene");
     }
 }
