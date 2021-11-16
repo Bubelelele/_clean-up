@@ -22,25 +22,29 @@ public class SwitchScenes : MonoBehaviour
 
             if (Distance.y < -25)
             {
+                AnimationManager.isDead = false;
+                MasterTime.masterTime = 1.0f;
                 SceneManager.LoadScene(3);
-                Time.timeScale = 1f;
             }
             else if (Distance.y > 25)
             {
+                AnimationManager.isDead = false;
+                MasterTime.masterTime = 1.0f;
                 SceneManager.LoadScene(1);
-                Time.timeScale = 1f;
             }
         }
 
         if (Input.GetKeyUp(KeyCode.N))
         {
+            AnimationManager.isDead = false;
+            MasterTime.masterTime = 1.0f;
             SceneManager.LoadScene(1);
-            Time.timeScale = 1f;
         }
         else if (Input.GetKeyUp(KeyCode.B))
         {
+            AnimationManager.isDead = false;
+            MasterTime.masterTime = 1.0f;
             SceneManager.LoadScene(3);
-            Time.timeScale = 1f;
         }
     }
 }
