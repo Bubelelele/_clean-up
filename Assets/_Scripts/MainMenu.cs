@@ -9,12 +9,13 @@ public class MainMenu : MonoBehaviour
     {
         AudioController.menuMusic.mute = true;
         AudioController.clickSound.Play();
-        SceneManager.LoadScene("BuildingRotationMain");
+        Time.timeScale = 1f;
+        MasterTime.masterTime = 1.0f;
         PaperMoving.onScreen = false;
         AnimationManager.isDead = false;
         ScoreController.score = 0;
         PauseMenu.GameIsPaused = false;
-        Time.timeScale = 1f;
+        SceneManager.LoadScene("BuildingRotationMain");
     }
 
     public void QuitGame()
@@ -38,6 +39,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        Time.timeScale = 1f;
         AudioController.clickSound.Play();
         SceneManager.LoadScene("MainMenuUIScene");
     }

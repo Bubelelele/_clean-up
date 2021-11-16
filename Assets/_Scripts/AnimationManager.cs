@@ -22,7 +22,7 @@ public class AnimationManager : MonoBehaviour
         playerCamera.transform.localPosition = new Vector3(0f, 0f, -2f);
         playerCamera.transform.localRotation = new Quaternion(0f, 0f, 0f, 0f);
 
-        whichDeath = Random.Range(0, 3);
+        whichDeath = Random.Range(0, 1);
     }
 
     // Update is called once per frame
@@ -110,6 +110,8 @@ public class AnimationManager : MonoBehaviour
 
             pauseMenu.GetComponent<PauseMenu>().EndGame();
             transform.position = new Vector3(0, 0, -6.8f);
+
+            Time.timeScale = 0f;
         }
     }
 

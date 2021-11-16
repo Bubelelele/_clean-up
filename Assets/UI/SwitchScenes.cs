@@ -22,12 +22,14 @@ public class SwitchScenes : MonoBehaviour
 
             if (Distance.y < -25)
             {
+                ScoreController.score = 0;
                 AnimationManager.isDead = false;
                 MasterTime.masterTime = 1.0f;
                 SceneManager.LoadScene(3);
             }
             else if (Distance.y > 25)
             {
+                ScoreController.score = 0;
                 AnimationManager.isDead = false;
                 MasterTime.masterTime = 1.0f;
                 SceneManager.LoadScene(1);
@@ -36,12 +38,14 @@ public class SwitchScenes : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.N))
         {
+            ScoreController.score = 0;
             AnimationManager.isDead = false;
             MasterTime.masterTime = 1.0f;
             SceneManager.LoadScene(1);
         }
         else if (Input.GetKeyUp(KeyCode.B))
         {
+            ScoreController.score = 0;
             AnimationManager.isDead = false;
             MasterTime.masterTime = 1.0f;
             SceneManager.LoadScene(3);

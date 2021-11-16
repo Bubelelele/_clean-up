@@ -10,7 +10,6 @@ public class ImageRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Time.timeScale = 1f;
         transform.Rotate(0, 0, angle * Time.deltaTime);
     }
 }
