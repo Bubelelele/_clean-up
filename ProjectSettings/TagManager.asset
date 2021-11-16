@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - KillingObstacle
+  - Bucket
+  - Bleach
+  - Long Tool
+  - Wide Tool
   layers:
   - Default
   - TransparentFX
