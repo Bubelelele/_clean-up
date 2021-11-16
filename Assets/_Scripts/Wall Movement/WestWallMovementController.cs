@@ -119,7 +119,7 @@ public class WestWallMovementController : MonoBehaviour
         // Moves the player to the target position on the west wall.
         if (moving && target != corner)
         {
-            player.transform.position = Vector3.MoveTowards(player.transform.position, target, 7f * Time.smoothDeltaTime);
+            player.transform.position = Vector3.MoveTowards(player.transform.position, target, 7f * Time.smoothDeltaTime * MasterTime.masterTime);
         }
         }
     }

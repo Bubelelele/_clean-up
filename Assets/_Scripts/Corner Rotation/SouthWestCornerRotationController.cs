@@ -17,7 +17,7 @@ public class SouthWestCornerRotationController : MonoBehaviour
         {
             if (player.transform.eulerAngles.y == 90 || player.transform.eulerAngles.y < 90)
             {
-                player.transform.RotateAround(transform.position, Vector3.up, 90 * -Time.smoothDeltaTime);
+                player.transform.RotateAround(transform.position, Vector3.up, 90 * -Time.smoothDeltaTime * MasterTime.masterTime);
             }
             else
             {
@@ -32,7 +32,7 @@ public class SouthWestCornerRotationController : MonoBehaviour
         {
             if (player.transform.eulerAngles.y == 0 || player.transform.eulerAngles.y < 90)
             {
-                player.transform.RotateAround(transform.position, Vector3.up, 90 * Time.smoothDeltaTime);
+                player.transform.RotateAround(transform.position, Vector3.up, 90 * Time.smoothDeltaTime * MasterTime.masterTime);
             }
             else
             {

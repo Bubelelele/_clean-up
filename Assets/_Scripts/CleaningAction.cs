@@ -35,7 +35,7 @@ public class CleaningAction : MonoBehaviour
             if (startedCleaning == true && cleaningTimer > 0)
             {
                 cleaningTimer -= Time.deltaTime;
-                Vector3 positionChange = new Vector3(Time.fixedDeltaTime * 0, 0.05f, 0);
+                Vector3 positionChange = new Vector3(Time.fixedDeltaTime * 0, 0.05f * MasterTime.masterTime, 0);
                 transform.position += positionChange;
             }
 

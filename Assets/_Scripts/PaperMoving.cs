@@ -31,7 +31,7 @@ public class PaperMoving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 positionChange = new Vector3(0f, Time.deltaTime * paperSpeed, 0f);
+        Vector3 positionChange = new Vector3(0f, Time.deltaTime * paperSpeed * MasterTime.masterTime, 0f);
         transform.position += positionChange;
         transform.Rotate(Random.Range(0F, 360f) * Time.deltaTime, Random.Range(0F, 360f) * Time.deltaTime, Random.Range(0F, 360f) * Time.deltaTime);
 
