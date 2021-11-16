@@ -6,7 +6,6 @@ public class JanitorRockstar : MonoBehaviour
 {
     public static bool rockstarActivated = false;
     public bool testActivate = false;
-    public AudioSource rockstarMusic;
 
     // Update is called once per frame
     void Update()
@@ -22,9 +21,8 @@ public class JanitorRockstar : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            rockstarMusic = GameObject.Find("Audio").GetComponent<AudioSource>();
-            rockstarMusic.Play();
             rockstarActivated = true;
+            AudioController.janitorRockstar.Play();
             Destroy(gameObject);
         }
     }
