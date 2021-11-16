@@ -71,6 +71,8 @@ public class HighscoreTable : MonoBehaviour
             }
         }
 
+        PlayerPrefs.SetInt("bestScore", highscores.highscoreEntryList[0].score);
+
         highscoreEntryTransformList = new List<Transform>();
         foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList)
         {
