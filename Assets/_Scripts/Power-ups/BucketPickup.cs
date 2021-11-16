@@ -8,6 +8,7 @@ public class BucketPickup : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            AudioController.bucket.Play();
             BucketPowerUp.bucketPickedup = true;
             Destroy(gameObject);
         }

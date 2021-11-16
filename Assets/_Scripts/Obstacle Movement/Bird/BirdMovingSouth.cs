@@ -57,9 +57,13 @@ public class BirdMovingSouth : MonoBehaviour
     {
         if (hit.CompareTag("Bucket"))
         {
+            AudioController.birdImpact.Play();
             BucketPowerUp.bucketDestroyed = true;
             Destroy(gameObject);
-
+        }
+        else if (hit.CompareTag("Player"))
+        {
+            AudioController.birdImpact.Play();
         }
     }
 }

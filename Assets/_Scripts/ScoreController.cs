@@ -56,6 +56,7 @@ public class ScoreController : MonoBehaviour
 
         if (streakTimer < 1 && multiplier > 1)
         {
+            AudioController.multiplierLost.Play();
             multiplier = 1;
             streakTimer = 1;
             streakCount = 0;
