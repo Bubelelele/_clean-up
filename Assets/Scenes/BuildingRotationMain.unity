@@ -1837,7 +1837,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirtPrefab: {fileID: 394820405015416358, guid: 35317aba3df2d09459089aa7c56dce09, type: 3}
-  spawnRateTimer: 1.5
+  spawnRate: 2.2
+  spawnRateTimer: 2.2
   newMilestone: 50
   player: {fileID: 1191987046}
   southPaperSpawner: {fileID: 23515215}
@@ -6108,8 +6109,6 @@ MonoBehaviour:
   northWestCorner: {fileID: 112680603}
   lane: []
   target: {x: 0, y: 0, z: 0}
-  swipeRange: 0
-  tapRange: 0
 --- !u!1 &1543417435
 GameObject:
   m_ObjectHideFlags: 0
@@ -7478,8 +7477,6 @@ MonoBehaviour:
   northEastCorner: {fileID: 1306126635}
   lane: []
   target: {x: 0, y: 0, z: 0}
-  swipeRange: 0
-  tapRange: 0
 --- !u!1 &1734440705
 GameObject:
   m_ObjectHideFlags: 0
