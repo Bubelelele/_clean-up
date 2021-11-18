@@ -3398,8 +3398,6 @@ MonoBehaviour:
   corner: {x: 0, y: 0, z: 0}
   leftLane: {x: 0, y: 0, z: 0}
   rightLane: {x: 0, y: 0, z: 0}
-  swipeRange: 0
-  tapRange: 0
 --- !u!1 &844221375 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5220557771002607777, guid: 4259bc492e1d16c47aea87a36b097fa4, type: 3}
@@ -5001,7 +4999,6 @@ MonoBehaviour:
   plus10: {fileID: 164764708}
   streak: {fileID: 630567313}
   Multiplier: {fileID: 141662559}
-  rockstarMusic: {fileID: 0}
 --- !u!136 &1191987053
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6754,7 +6751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1635661299
 RectTransform:
   m_ObjectHideFlags: 0

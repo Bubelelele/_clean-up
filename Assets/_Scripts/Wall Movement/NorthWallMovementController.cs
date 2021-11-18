@@ -13,14 +13,16 @@ public class NorthWallMovementController : MonoBehaviour
     private Vector2 startTouchPosition;
     private Vector2 currentPosition;
     
-    
-
-    public float swipeRange;
-    public float tapRange;
+    private Vector3 fp;   //First touch position
+    private Vector3 lp;   //Last touch position
+    private float dragDistance;  //minimum distance for a swipe to be registered
 
     // Start is called before the first frame update
     void Start()
     {
+
+        dragDistance = Screen.width * 10 / 100; //dragDistance is 10% width of the screen
+
         // Creates an array of all lane positions of the north wall.
         lane = new[]
         {
@@ -35,8 +37,6 @@ public class NorthWallMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        swipeRange = 25f;
-
         currentWall = player.GetComponent<WallChecker>().wall;
 
         // Stores positions of lanes / corners next to the player into variables and stops any movement.
@@ -88,32 +88,54 @@ public class NorthWallMovementController : MonoBehaviour
             }
         }
         // Sets the target for the player based on the pressed key and starts movement / rotation based on the target.
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            startTouchPosition = Input.GetTouch(0).position;
-        }
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved && !moving && currentWall == "north")
-        {
-            currentPosition = Input.GetTouch(0).position;
-            Vector3 Distance = currentPosition - startTouchPosition;
 
-            if (Distance.x < -swipeRange)
+        if (Input.touchCount == 1) // user is touching the screen with a single touch
+        {
+            Touch touch = Input.GetTouch(0); // get the touch
+            if (touch.phase == TouchPhase.Began) //check for the first touch
             {
-                target = leftLane;
-                moving = true;
-                if (target == northEastCorner.transform.position)
-                {
-                    northEastCorner.GetComponent<NorthEastCornerRotationController>().rotating = true;
-                }
-
+                fp = touch.position;
+                lp = touch.position;
             }
-            else if (Distance.x > swipeRange)
+            else if (touch.phase == TouchPhase.Moved) // update the last position based on where they moved
             {
-                target = rightLane;
-                moving = true;
-                if (target == northWestCorner.transform.position)
-                {
-                    northWestCorner.GetComponent<NorthWestCornerRotationController>().rotating = true;
+                lp = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Ended) //check if the finger is removed from the screen
+            {
+                lp = touch.position;  //last touch position. Ommitted if you use list
+ 
+                //Check if drag distance is greater than 20% of the screen height
+                if (Mathf.Abs(lp.x - fp.x) > dragDistance || Mathf.Abs(lp.y - fp.y) > dragDistance)
+                {          
+                    if (Mathf.Abs(lp.x - fp.x) > Mathf.Abs(lp.y - fp.y) && !moving && currentWall == "north")
+                    {   
+                        if ((lp.x > fp.x))  
+                        {   //Right swipe
+                            target = rightLane;
+                            moving = true;
+                            if (target == northWestCorner.transform.position)
+                            {
+                                northWestCorner.GetComponent<NorthWestCornerRotationController>().rotating = true;
+                            }
+                            Debug.Log("Right Swipe");
+                        }
+                        else
+                        {   //Left swipe
+                            target = leftLane;
+                            moving = true;
+                            if (target == northEastCorner.transform.position)
+                            {
+                                northEastCorner.GetComponent<NorthEastCornerRotationController>().rotating = true;
+                            }
+                            Debug.Log("Left Swipe");
+                        }
+                    }
+                }
+                else
+                {   //It's a tap as the drag distance is less than 20% of the screen height
+                    CleaningAction.startedCleaning = true;
+                    Debug.Log("Tap");
                 }
             }
         }
