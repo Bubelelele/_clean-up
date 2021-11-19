@@ -22,7 +22,7 @@ public class AnimationManager : MonoBehaviour
         playerCamera.transform.localPosition = new Vector3(0f, 0f, -2f);
         playerCamera.transform.localRotation = new Quaternion(0f, 0f, 0f, 0f);
 
-        whichDeath = Random.Range(0, 1);
+        whichDeath = Random.Range(0, 3);
     }
 
     // Update is called once per frame
