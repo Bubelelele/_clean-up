@@ -55,6 +55,17 @@ public class AnimationManager : MonoBehaviour
         {
             isDead = true;
         }
+
+        if (gameObject.CompareTag("OpenWindow"))
+        {
+            MasterTime.masterTime = 0f;
+
+            transform.Find("Cleaner").gameObject.SetActive(false);
+            transform.Find("LongCleaner").gameObject.SetActive(false);
+            transform.Find("WideCleaner").gameObject.SetActive(false);
+
+            IntoWindowAnimation();
+        }
     }
 
     private void BeginningAnimation()
@@ -82,6 +93,7 @@ public class AnimationManager : MonoBehaviour
     private void FallingAnimation()
     {
         transform.Find("Cleaner").gameObject.SetActive(false);
+        transform.Find("LongCleaner").gameObject.SetActive(false);
         transform.Find("WideCleaner").gameObject.SetActive(false);
 
         Rigidbodies = GetComponentsInChildren<Rigidbody>();
@@ -117,12 +129,11 @@ public class AnimationManager : MonoBehaviour
 
     private void TowardsScreenAnimation()
     {
-        player.GetComponent<Animator>().enabled = true;
+        player.GetComponent<Animator>().SetBool("towards_screen", true);
     }
 
     private void PancakeAnimation()
     {
-
         if (player.transform.localScale.y > 0.01)
         {
             PaperMoving.onScreen = true;
@@ -134,5 +145,11 @@ public class AnimationManager : MonoBehaviour
         {
             playerCamera.GetComponent<Animator>().enabled = true;
         }
+    }
+
+    private void IntoWindowAnimation()
+    {
+        player.GetComponent<Collider>().enabled = false;
+        player.GetComponent<Animator>().SetBool("drag_into_window", true);
     }
 }
