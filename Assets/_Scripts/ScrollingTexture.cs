@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class ScrollingTexture : MonoBehaviour
 {
     public GameObject quadGameObject;
-    private Renderer quadRenderer;
+    public Renderer quadRenderer;
     public static float milestone;
     public Text height;
     public static string heightTotal;
     public int lbHeight;
+    public static int offset;
 
-    public float scrollSpeed = 2.27f;
+    static public float scrollSpeed = 2.27f;
 
     void Start()
     {
@@ -21,7 +22,8 @@ public class ScrollingTexture : MonoBehaviour
     }
 
     void Update()
-    {        
+    {
+        offset = (int)quadRenderer.material.mainTextureOffset.y;
         if (AnimationManager.isDead == true)
         {
             scrollSpeed = 0f;

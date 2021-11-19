@@ -9,7 +9,7 @@ public class EastChairSpawner : MonoBehaviour
     public float spawnRateTimer = 2.2f;
     private Vector3 dirtPos;
     private float Offset = 2.1f;
-    public float newMilestone = 50f;
+    public float newMilestone = 100f;
     public GameObject player;
     public GameObject eastPaperSpawner;
     
@@ -32,7 +32,7 @@ public class EastChairSpawner : MonoBehaviour
             {
                 eastPaperSpawner.GetComponent<EastPaperSpawner>().SpawnPaperLine();
             }
-            newMilestone += newMilestone;
+            newMilestone += 200;
             spawnRate -= 0.1f;
         }
     }

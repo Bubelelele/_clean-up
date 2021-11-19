@@ -1229,9 +1229,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quadGameObject: {fileID: 246973700}
+  quadRenderer: {fileID: 0}
   height: {fileID: 1632253289}
   lbHeight: 0
-  scrollSpeed: 2.27
 --- !u!1 &253608000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,7 +1864,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4977763761445161304, guid: c83ad0dacea7bdd4cac279218691900f, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4977763761445161304, guid: c83ad0dacea7bdd4cac279218691900f, type: 3}
       propertyPath: m_LocalScale.x
@@ -2660,7 +2660,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2058152688911950511, guid: 11ac4543b75bbf046a3762aacc0da9fe, type: 3}
       propertyPath: m_RootOrder
-      value: 31
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2058152688911950511, guid: 11ac4543b75bbf046a3762aacc0da9fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2909,7 +2909,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!95 &705507996
 Animator:
@@ -4194,7 +4194,7 @@ Transform:
   m_LocalScale: {x: 10.6, y: 370, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &972840432
 MonoBehaviour:
@@ -4209,9 +4209,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quadGameObject: {fileID: 972840427}
+  quadRenderer: {fileID: 0}
   height: {fileID: 1632253289}
   lbHeight: 0
-  scrollSpeed: 2.27
 --- !u!1 &975334338
 GameObject:
   m_ObjectHideFlags: 0
@@ -5001,7 +5001,6 @@ MonoBehaviour:
   plus10: {fileID: 164764708}
   streak: {fileID: 630567313}
   Multiplier: {fileID: 141662559}
-  rockstarMusic: {fileID: 0}
 --- !u!136 &1191987053
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5945,7 +5944,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2058152688911950511, guid: 11ac4543b75bbf046a3762aacc0da9fe, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2058152688911950511, guid: 11ac4543b75bbf046a3762aacc0da9fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6609,9 +6608,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quadGameObject: {fileID: 1615128684}
+  quadRenderer: {fileID: 0}
   height: {fileID: 1632253289}
   lbHeight: 0
-  scrollSpeed: 2.27
 --- !u!1 &1628614097
 GameObject:
   m_ObjectHideFlags: 0
@@ -7279,7 +7278,7 @@ Transform:
   m_LocalScale: {x: 10.6, y: 370, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1674888048
 MonoBehaviour:
@@ -7294,9 +7293,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quadGameObject: {fileID: 1674888043}
+  quadRenderer: {fileID: 0}
   height: {fileID: 1632253289}
   lbHeight: 0
-  scrollSpeed: 2.27
 --- !u!1 &1684736976
 GameObject:
   m_ObjectHideFlags: 0
@@ -7579,7 +7578,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889732259
 GameObject:
@@ -12921,7 +12920,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2126632961
 GameObject:
