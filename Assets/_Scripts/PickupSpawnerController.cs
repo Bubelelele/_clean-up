@@ -16,10 +16,14 @@ public class PickupSpawnerController : MonoBehaviour
     {
         if (ScrollingTexture.milestone > newMilestone)
         {
+            /*
             SpawnPickup(transform.position + new Vector3(spawnOffset, 0f, 0f));
             SpawnPickup(transform.position + new Vector3(-spawnOffset, 0f, 0f));
             SpawnPickup(transform.position + new Vector3(0f, 0f, spawnOffset));
             SpawnPickup(transform.position + new Vector3(0f, 0f, -spawnOffset));
+            */
+
+            SpawnPickups();
 
             newMilestone += 150f;
         }
@@ -41,23 +45,30 @@ public class PickupSpawnerController : MonoBehaviour
         }
     }
 
-    private void SpawnPickup(Vector3 targetPosition)
+    private void SpawnPickups(/*Vector3 targetPosition*/)
     {
         float chance = Random.Range(0f, 100f);
-
-        if (chance > 0f && chance < 50f)
+        
+        if (chance > 0f && chance <= 50f && pickupToSpawn != superBleachPrefab)
         {
             pickupToSpawn = superBleachPrefab;
         }
-        else if (chance >= 50f && chance < 80f)
+        else if ((chance > 50f && chance <= 80f && pickupToSpawn != bucketPrefab) || (chance > 0f && chance <= 50f && pickupToSpawn == superBleachPrefab))
         {
             pickupToSpawn = bucketPrefab;
         }
-        else
+        else if ((chance > 80f && chance <= 100f && pickupToSpawn != rockstarPrefab) || (chance > 50f && chance <= 80f && pickupToSpawn == bucketPrefab))
         {
             pickupToSpawn = rockstarPrefab;
         }
+        else
+        {
+            pickupToSpawn = superBleachPrefab;
+        }
 
-        GameObject pickup = Instantiate(pickupToSpawn, targetPosition, Quaternion.identity);
+        GameObject pickup1 = Instantiate(pickupToSpawn, transform.position + new Vector3(spawnOffset, 0f, 0f), Quaternion.identity);
+        GameObject pickup2 = Instantiate(pickupToSpawn, transform.position + new Vector3(-spawnOffset, 0f, 0f), Quaternion.identity);
+        GameObject pickup3 = Instantiate(pickupToSpawn, transform.position + new Vector3(0f, 0f, spawnOffset), Quaternion.identity);
+        GameObject pickup4 = Instantiate(pickupToSpawn, transform.position + new Vector3(0f, 0f, -spawnOffset), Quaternion.identity);
     }
 }

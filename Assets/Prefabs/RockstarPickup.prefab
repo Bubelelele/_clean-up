@@ -4859,7 +4859,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testActivate: 0
-  rockstarMusic: {fileID: 0}
 --- !u!1001 &9203779622895549295
 PrefabInstance:
   m_ObjectHideFlags: 0
