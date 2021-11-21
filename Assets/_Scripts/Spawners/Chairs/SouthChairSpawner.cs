@@ -33,8 +33,12 @@ public class SouthChairSpawner : MonoBehaviour
                 southPaperSpawner.GetComponent<SouthPaperSpawner>().SpawnPaperLine();
             }
             
-            newMilestone += 200;
-            spawnRate -= 0.1f;
+            newMilestone += 100;
+
+            if (spawnRate > 0.4)
+            {
+                spawnRate -= 0.1f;
+            }
         }
     }
 
