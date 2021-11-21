@@ -97,16 +97,17 @@ public class SouthWallMovementController : MonoBehaviour
                 fp = touch.position;
                 lp = touch.position;
             }
-            else if (touch.phase == TouchPhase.Moved) // update the last position based on where they moved
-            {
-                lp = touch.position;
+            if (touch.phase == TouchPhase.Ended && !moving && currentWall == "south")
+            {   //It's a tap as the drag distance is less than 20% of the screen height
+                CleaningAction.startedCleaning = true;
+                Debug.Log("South Tap");
             }
-            else if (touch.phase == TouchPhase.Ended) //check if the finger is removed from the screen
+            else if (touch.phase == TouchPhase.Moved) //check if the finger is removed from the screen
             {
                 lp = touch.position;  //last touch position. Ommitted if you use list
  
                 //Check if drag distance is greater than 20% of the screen height
-                if (Mathf.Abs(lp.x - fp.x) > dragDistance || Mathf.Abs(lp.y - fp.y) > dragDistance)
+                if (Mathf.Abs(lp.x - fp.x) > dragDistance && !moving || Mathf.Abs(lp.y - fp.y) > dragDistance && !moving)
                 {          
                     if (Mathf.Abs(lp.x - fp.x) > Mathf.Abs(lp.y - fp.y) && !moving && currentWall == "south")
                     {   
@@ -133,11 +134,6 @@ public class SouthWallMovementController : MonoBehaviour
                             Debug.Log("Left Swipe");
                         }
                     }
-                }
-                else
-                {   //It's a tap as the drag distance is less than 20% of the screen height
-                    CleaningAction.startedCleaning = true;
-                    Debug.Log("Tap");
                 }
             }
         }
