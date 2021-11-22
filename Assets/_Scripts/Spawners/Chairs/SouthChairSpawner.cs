@@ -6,7 +6,7 @@ public class SouthChairSpawner : MonoBehaviour
 {
     public GameObject dirtPrefab;
     float spawnRate = 2.2f;
-    public float spawnRateTimer = 2.2f;
+    float spawnRateTimer = 2.2f;
     private Vector3 dirtPos;
     private float Offset = 2.1f;
     public float newMilestone = 50f;
@@ -33,8 +33,11 @@ public class SouthChairSpawner : MonoBehaviour
                 southPaperSpawner.GetComponent<SouthPaperSpawner>().SpawnPaperLine();
             }
             
-            newMilestone += newMilestone;
-            spawnRate -= 0.1f;
+            newMilestone += 100;
+            if (spawnRate > 0.5)
+            {
+                spawnRate -= 0.1f;
+            }   
         }
     }
 

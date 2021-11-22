@@ -1837,7 +1837,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirtPrefab: {fileID: 394820405015416358, guid: 35317aba3df2d09459089aa7c56dce09, type: 3}
-  spawnRateTimer: 1.5
   newMilestone: 50
   player: {fileID: 1191987046}
   southPaperSpawner: {fileID: 23515215}
@@ -3289,7 +3288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirtPrefab: {fileID: 394820405015416358, guid: 35317aba3df2d09459089aa7c56dce09, type: 3}
-  spawnRateTimer: 1.5
   newMilestone: 50
   player: {fileID: 1191987046}
   northPaperSpawner: {fileID: 1441489775}
@@ -3398,8 +3396,6 @@ MonoBehaviour:
   corner: {x: 0, y: 0, z: 0}
   leftLane: {x: 0, y: 0, z: 0}
   rightLane: {x: 0, y: 0, z: 0}
-  swipeRange: 0
-  tapRange: 0
 --- !u!1 &844221375 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5220557771002607777, guid: 4259bc492e1d16c47aea87a36b097fa4, type: 3}
@@ -3767,7 +3763,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirtPrefab: {fileID: 394820405015416358, guid: 35317aba3df2d09459089aa7c56dce09, type: 3}
-  spawnRateTimer: 1.5
   newMilestone: 50
   player: {fileID: 1191987046}
   eastPaperSpawner: {fileID: 1149677005}
@@ -5001,7 +4996,6 @@ MonoBehaviour:
   plus10: {fileID: 164764708}
   streak: {fileID: 630567313}
   Multiplier: {fileID: 141662559}
-  rockstarMusic: {fileID: 0}
 --- !u!136 &1191987053
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6111,8 +6105,6 @@ MonoBehaviour:
   northWestCorner: {fileID: 112680603}
   lane: []
   target: {x: 0, y: 0, z: 0}
-  swipeRange: 0
-  tapRange: 0
 --- !u!1 &1543417435
 GameObject:
   m_ObjectHideFlags: 0
@@ -6754,7 +6746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1635661299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7481,8 +7473,6 @@ MonoBehaviour:
   northEastCorner: {fileID: 1306126635}
   lane: []
   target: {x: 0, y: 0, z: 0}
-  swipeRange: 0
-  tapRange: 0
 --- !u!1 &1734440705
 GameObject:
   m_ObjectHideFlags: 0
@@ -8060,7 +8050,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 177e5bd449b69384dbf4467fdde6bd60, type: 2}
+  - {fileID: 2100000, guid: 04d4a60dcca38514d817dfc00fa7a3d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8124,8 +8114,8 @@ ParticleSystem:
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
-  autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  autoRandomSeed: 0
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -8242,7 +8232,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -8358,7 +8348,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8939,7 +8929,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 50
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -12861,7 +12851,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirtPrefab: {fileID: 394820405015416358, guid: 35317aba3df2d09459089aa7c56dce09, type: 3}
-  spawnRateTimer: 1.5
   newMilestone: 50
   player: {fileID: 1191987046}
   westPaperSpawner: {fileID: 2123231061}
