@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaterialTester : MonoBehaviour
+public class ChairColor : MonoBehaviour
 {
 
     public Material green, red, yellow, blue, black;
@@ -14,9 +14,9 @@ public class MaterialTester : MonoBehaviour
 
     void Start()
     {
-        materialList = gameObject.GetComponent<MeshRenderer>().materials;
+        materialList = gameObject.GetComponent<MeshRenderer>().materials; //Takes all the materials on the chair object and puts them in a list.
         
-        colorpicker = Random.Range(1,6);
+        colorpicker = Random.Range(1,6); //Chooses a random color.
         if (colorpicker == 1)
         {
             thisMaterial = green;
@@ -38,7 +38,7 @@ public class MaterialTester : MonoBehaviour
             thisMaterial = black;
         }
         
-        materialList[2] = thisMaterial;
-        gameObject.GetComponent<MeshRenderer>().materials = materialList;
+        materialList[2] = thisMaterial; //Finds the seat material in the list and changes it to the randomly selected color material.
+        gameObject.GetComponent<MeshRenderer>().materials = materialList; //Reassigns the list to the chair object.
     }
 }
