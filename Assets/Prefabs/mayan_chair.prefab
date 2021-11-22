@@ -139,11 +139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6d02a7a9264cc4faf8e246eaf522c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  green: {fileID: 2100000, guid: add2a72761e1e8e47b6574fc27c8aff2, type: 2}
-  red: {fileID: 2100000, guid: e330671847d0b9b4b970c52c77bd8d08, type: 2}
-  yellow: {fileID: 2100000, guid: e9896135a94f4b74a8f3281fd4dfe8c4, type: 2}
-  blue: {fileID: 2100000, guid: 991a6f09c34960e409ffee8db2766dbe, type: 2}
   black: {fileID: 2100000, guid: 4d03e8498583fdd40b74a1bfef2d0fe8, type: 2}
+  blue: {fileID: 2100000, guid: 26809262448a53c4fb3580272bf014b1, type: 2}
+  crimson: {fileID: 2100000, guid: 729a24aff4c46a1438f40c9ba25bd564, type: 2}
+  yellow: {fileID: 2100000, guid: 795c62fe1da3c3d47b3a82e8cb44737e, type: 2}
 --- !u!1001 &7994809537833129009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,6 +194,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -425565630206218756, guid: 683f83de04312b440b668c1a00cac3c2, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 729a24aff4c46a1438f40c9ba25bd564, type: 2}
     - target: {fileID: 919132149155446097, guid: 683f83de04312b440b668c1a00cac3c2, type: 3}
       propertyPath: m_Name
       value: Chair
