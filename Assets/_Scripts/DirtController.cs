@@ -20,6 +20,11 @@ public class DirtController : MonoBehaviour
     // Code runs when colliding with anything that has a collider + rigibody.
     private void OnTriggerEnter(Collider col)
     {
+        if (col.CompareTag("OpenWindow"))
+        {
+            Destroy(gameObject);
+            Debug.Log("Dirty open window!");
+        }
         trigger = true;
     }
 

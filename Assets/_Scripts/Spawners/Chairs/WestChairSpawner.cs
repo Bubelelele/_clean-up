@@ -6,10 +6,10 @@ public class WestChairSpawner : MonoBehaviour
 {
     public GameObject dirtPrefab;
     float spawnRate = 2.2f;
-    float spawnRateTimer = 2.2f;
+    public float spawnRateTimer = 2.2f;
     private Vector3 dirtPos;
     private float Offset = 2.1f;
-    public float newMilestone = 50f;
+    public float newMilestone = 100f;
     public GameObject player;
     public GameObject westPaperSpawner;
 
@@ -32,9 +32,8 @@ public class WestChairSpawner : MonoBehaviour
             {
                 westPaperSpawner.GetComponent<WestPaperSpawner>().SpawnPaperLine();
             }
-
             newMilestone += 100;
-            if (spawnRate > 0.5)
+            if (spawnRate > 0.4)
             {
                 spawnRate -= 0.1f;
             }

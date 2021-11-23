@@ -9,6 +9,7 @@ TagManager:
   - Bleach
   - Long Tool
   - Wide Tool
+  - OpenWindow
   layers:
   - Default
   - TransparentFX

@@ -5,20 +5,36 @@ using UnityEngine;
 public class SouthDirtSpawner : MonoBehaviour
 {
     public GameObject dirtPrefab;
-    private float spawnRate = 2.20265f;
+    private float spawnTimer = 1f;
     private Vector3 dirtPos;
     private float Offset = 2.1f;
-    
-    // Start is called before the first frame update
-    void Start()
+    private bool dirtSwitch = true;
+
+    void Update()
     {
-        InvokeRepeating("SpawnDirt", 1.55f, spawnRate);
+        if (ScrollingTexture.offset %5 == 0 && dirtSwitch == true)
+        {
+            SpawnDirt();
+            dirtSwitch = false;
+        }
+
+        if (dirtSwitch == false)
+        {
+            spawnTimer -= Time.deltaTime;
+        }
+
+        if (spawnTimer < 0)
+        {
+            dirtSwitch = true;
+            spawnTimer = 1f;
+        }
     }
+
 
     void SpawnDirt()
     {
         Offset *= Random.Range(1, 6);
-        dirtPos = new Vector3(transform.position.x + Offset, transform.position.y - 1.35f, transform.position.z - 0.01f);
+        dirtPos = new Vector3(transform.position.x + Offset, transform.position.y + 0.6f, transform.position.z - 0.01f);
         Instantiate(dirtPrefab, dirtPos, Quaternion.Euler(0f, 0f, 0f));
         Offset = 2.1f;
     }
