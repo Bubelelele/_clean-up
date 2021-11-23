@@ -59,6 +59,7 @@ public class AnimationManager : MonoBehaviour
         if (gameObject.CompareTag("OpenWindow"))
         {
             MasterTime.masterTime = 0f;
+            BucketPowerUp.bucketDestroyed = true;
 
             transform.Find("Cleaner").gameObject.SetActive(false);
             transform.Find("LongCleaner").gameObject.SetActive(false);
