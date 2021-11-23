@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CleaningAction : MonoBehaviour
 {
-    static public bool startedCleaning = false;
+    static public bool startedCleaning = false, loseDurability = false;
     float cleaningTimer = 1f;
 
     // Start is called before the first frame update
@@ -27,9 +27,10 @@ public class CleaningAction : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, 2.2f, transform.position.z);
             }
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) && startedCleaning == false)
             {
                 startedCleaning = true;
+                loseDurability = true;
             }
 
             if (startedCleaning == true && cleaningTimer > 0)

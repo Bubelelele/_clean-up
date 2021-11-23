@@ -103,6 +103,7 @@ public class WestWallMovementController : MonoBehaviour
             if (touch.phase == TouchPhase.Ended && !moving && currentWall == "west")
             {   //It's a tap as the drag distance is less than 20% of the screen height
                 CleaningAction.startedCleaning = true;
+                CleaningAction.loseDurability = true;
                 Debug.Log("West Tap");
             }
             else if (touch.phase == TouchPhase.Moved) //check if the finger is removed from the screen

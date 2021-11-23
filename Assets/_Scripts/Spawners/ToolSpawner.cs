@@ -9,7 +9,7 @@ public class ToolSpawner : MonoBehaviour
 
     private GameObject toolToSpawn;
 
-    private float rate = 10f;
+    private float rate = 200f;
     private float laneOffset = 2.1f, spawnerOffset = 6.3f;
     private bool toolSwitch = true;
     private float spawnTimer = 1f;
@@ -38,7 +38,7 @@ public class ToolSpawner : MonoBehaviour
         if (ScrollingTexture.offset % rate == 0 && toolSwitch == true && ScrollingTexture.offset * 1 != 0)
         {
             SpawnTools();
-            rate *= 0.5f;
+            // rate *= 0.5f;
             toolSwitch = false;
         }
 
