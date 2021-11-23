@@ -15,7 +15,7 @@ public class Holding : MonoBehaviour
     {
         holding = this.GetComponent<Animator>();
         AnimationManager.isDead = false;
-        Time.timeScale = 1f;
+        MasterTime.masterTime = 1f;
     }
 
     void LateUpdate()
