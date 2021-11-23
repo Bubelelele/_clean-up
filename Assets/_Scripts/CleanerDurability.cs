@@ -9,7 +9,7 @@ public class CleanerDurability : MonoBehaviour
     private int Durability = 10; //Amount of times you can clean.
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Cleaner = GameObject.Find("Cleaner");
     }
