@@ -4672,7 +4672,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: aa073d8ca4c6c874aa6a4bd836b131bb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -8145,7 +8145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   superBleach: {fileID: 844221375}
-  Cleaner: {fileID: 6391249460718938866}
 --- !u!199 &2028917386
 ParticleSystemRenderer:
   serializedVersion: 6

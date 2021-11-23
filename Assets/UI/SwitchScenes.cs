@@ -11,6 +11,7 @@ public class SwitchScenes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             startTouchPosition = Input.GetTouch(0).position;
@@ -35,6 +36,7 @@ public class SwitchScenes : MonoBehaviour
                 SceneManager.LoadScene(1);
             }
         }
+        */
 
         if (Input.GetKeyUp(KeyCode.N))
         {

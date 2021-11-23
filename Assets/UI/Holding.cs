@@ -10,12 +10,14 @@ public class Holding : MonoBehaviour
     private float holdRangeYmax = Screen.height * 0.45f;
 
     public GameObject arrow_up, arrow_down;
+    public GameObject clean, leaderboard;
 
     void Awake()
     {
         holding = this.GetComponent<Animator>();
+        ScoreController.score = 0;
         AnimationManager.isDead = false;
-        MasterTime.masterTime = 1f;
+        MasterTime.masterTime = 1.0f;
     }
 
     void LateUpdate()
@@ -40,6 +42,9 @@ public class Holding : MonoBehaviour
 
                 arrow_up.SetActive(true);
                 arrow_down.SetActive(true);
+
+                clean.SetActive(true);
+                leaderboard.SetActive(true);
             }
             else
             {
@@ -53,6 +58,9 @@ public class Holding : MonoBehaviour
 
                 arrow_up.SetActive(false);
                 arrow_down.SetActive(false);
+
+                clean.SetActive(false);
+                leaderboard.SetActive(false);
             }
 
         if (holding.GetBool("Holding") && Input.mousePosition.y > Screen.height * 0.6f)

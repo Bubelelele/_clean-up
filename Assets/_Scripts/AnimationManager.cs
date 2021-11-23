@@ -109,7 +109,7 @@ public class AnimationManager : MonoBehaviour
         foreach (BoxCollider comp in Colliders)
             comp.enabled = true;
 
-        if (gameObject.transform.position.y < -130)
+        if (gameObject.transform.position.y < -50)
         {
             Rigidbodies = GetComponentsInChildren<Rigidbody>();
 
