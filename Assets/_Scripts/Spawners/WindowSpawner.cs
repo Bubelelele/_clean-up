@@ -10,13 +10,20 @@ public class WindowSpawner : MonoBehaviour
     private float laneOffset = 2.1f, spawnerOffset = 5.31f;
     private bool windowSwitch = true;
     private float spawnTimer = 1f;
+    private int rate = 25;
 
+    void Start()
+    {
+        rate *= 10;
+    }
+    
     // Update is called once per frame
     void Update()
     {
-        if (ScrollingTexture.offset % 250 == 0 && windowSwitch == true && ScrollingTexture.offset * 1 != 0)
+        if (ScrollingTexture.offset % rate == 0 && windowSwitch == true && ScrollingTexture.offset * 1 != 0)
         {
             SpawnWindows();
+            rate = 25;
             windowSwitch = false;
         }
 
