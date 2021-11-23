@@ -44,7 +44,7 @@ public class Holding : MonoBehaviour
             else
             {
                 holding.SetBool("Holding", false);
-                transform.position = new Vector3(139f, 185f, 1f);
+                transform.position = new Vector3(Screen.width * 0.5f, Screen.height * 0.37f, 1f);
 
                 holdRangeXmin = Screen.width * 0.38f;
                 holdRangeXmax = Screen.width * 0.62f;
