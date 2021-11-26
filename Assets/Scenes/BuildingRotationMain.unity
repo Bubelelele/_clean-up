@@ -1308,7 +1308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &316266280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a3aca0c9488cf43a3cff17534d3305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdPrefab: {fileID: 4729880183674799148, guid: e1afd966658f55840822aa5406752481, type: 3}
+  birdPrefab: {fileID: 4729880183674799148, guid: 4036d4f88da60714188e85a8eb9c3d27, type: 3}
   birdTimer: 0
 --- !u!4 &316266281
 Transform:
@@ -1864,7 +1864,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4977763761445161304, guid: c83ad0dacea7bdd4cac279218691900f, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4977763761445161304, guid: c83ad0dacea7bdd4cac279218691900f, type: 3}
       propertyPath: m_LocalScale.x
@@ -2383,7 +2383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &583940950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2396,7 +2396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e525cb21cfd464d4089458ef9cbb37a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdPrefab: {fileID: 4729880183674799148, guid: 5110a85bfe0808843a50d05cc8a03758, type: 3}
+  birdPrefab: {fileID: 4729880183674799148, guid: ef28cfa0adb470e4b8157290b4fc776c, type: 3}
   birdTimer: 0
 --- !u!4 &583940951
 Transform:
@@ -2705,7 +2705,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2058152688911950511, guid: 11ac4543b75bbf046a3762aacc0da9fe, type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 2058152688911950511, guid: 11ac4543b75bbf046a3762aacc0da9fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3275,7 +3275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &804249064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5402,7 +5402,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2058152688911950511, guid: 11ac4543b75bbf046a3762aacc0da9fe, type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 2058152688911950511, guid: 11ac4543b75bbf046a3762aacc0da9fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5890,7 +5890,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1444017861
 GameObject:
@@ -6724,7 +6724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1628614098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6737,7 +6737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8240dbbcb6520446871650b1038c84d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdPrefab: {fileID: 4729880183674799148, guid: b916c3cb37197a2448ffc5e6d9a7cb72, type: 3}
+  birdPrefab: {fileID: 4729880183674799148, guid: f70bbc6d0f4c02a40b97e7454257a221, type: 3}
   birdTimer: 0
 --- !u!4 &1628614099
 Transform:
@@ -12929,7 +12929,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13026,7 +13026,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2126632961
 GameObject:
