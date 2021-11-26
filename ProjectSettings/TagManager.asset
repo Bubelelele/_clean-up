@@ -7,7 +7,9 @@ TagManager:
   - KillingObstacle
   - Bucket
   - Bleach
-  - Cloud
+  - Long Tool
+  - Wide Tool
+  - OpenWindow
   layers:
   - Default
   - TransparentFX

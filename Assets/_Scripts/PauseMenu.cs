@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public GameObject gameOverUI;
+    public GameObject betterScoreGroup;
 
     public Text points;
     public Text height;
@@ -36,7 +37,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        Time.timeScale = ScrollingTexture.masterTime;
+        Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
@@ -48,7 +49,8 @@ public class PauseMenu : MonoBehaviour
     }
     public void LoadMenu()
     {
-        SceneManager.LoadScene("MainMenuScene");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenuUIScene");
     }
 
     public void QuitGame()
@@ -58,11 +60,19 @@ public class PauseMenu : MonoBehaviour
     }
     public void EndGame()
     {
+        AudioController.gOverOffice.Play();
         gameOverUI.SetActive(true);
         points.text = ScoreController.score.ToString() + "pt";
         height.text = ScrollingTexture.heightTotal;
         Time.timeScale = 0f;
         GameIsPaused = true;
         tapButton.SetActive(false);
+        if (ScoreController.score > PlayerPrefs.GetInt("bestScore"))
+        {
+            betterScoreGroup.SetActive(true);
+        }
+        else { betterScoreGroup.SetActive(false); }
+        Debug.Log("Score: " + ScoreController.score);
+        Debug.Log("PP Score: " + PlayerPrefs.GetInt("bestScore"));
     }
 }

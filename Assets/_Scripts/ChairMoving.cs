@@ -25,7 +25,7 @@ public class ChairMoving : MonoBehaviour
     }
     void Update()
     {
-        Vector3 positionChange = new Vector3(0f, Time.deltaTime * chairSpeed, 0f);
+        Vector3 positionChange = new Vector3(0f, Time.deltaTime * chairSpeed * MasterTime.masterTime, 0f);
         transform.position += positionChange;
         transform.Rotate(Random.Range(0F,30f) * Time.deltaTime, Random.Range(0F, 30f) * Time.deltaTime, Random.Range(0f, 30f) * Time.deltaTime);
 

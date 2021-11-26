@@ -40,7 +40,7 @@ public class BirdMovingSouth : MonoBehaviour
             else if (indicatorTimer < 0) { Indicator.gameObject.SetActive(false); }
         }
 
-            Vector3 positionChange = new Vector3(Time.deltaTime * randomSpeed, Time.deltaTime * dirtSpeed, 0f);
+            Vector3 positionChange = new Vector3(Time.deltaTime * randomSpeed * MasterTime.masterTime, Time.deltaTime * dirtSpeed * MasterTime.masterTime, 0f);
             transform.position += positionChange;
 
             if (gameObject.transform.position.y < -5)
@@ -57,9 +57,13 @@ public class BirdMovingSouth : MonoBehaviour
     {
         if (hit.CompareTag("Bucket"))
         {
+            AudioController.birdImpact.Play();
             BucketPowerUp.bucketDestroyed = true;
             Destroy(gameObject);
-
+        }
+        else if (hit.CompareTag("Player"))
+        {
+            AudioController.birdImpact.Play();
         }
     }
 }

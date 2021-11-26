@@ -20,6 +20,11 @@ public class DirtController : MonoBehaviour
     // Code runs when colliding with anything that has a collider + rigibody.
     private void OnTriggerEnter(Collider col)
     {
+        if (col.CompareTag("OpenWindow"))
+        {
+            Destroy(gameObject);
+            Debug.Log("Dirty open window!");
+        }
         trigger = true;
     }
 
@@ -32,7 +37,7 @@ public class DirtController : MonoBehaviour
             Vector3 positionChange = new Vector3(0, Time.deltaTime * 4.7f, 0);
             transform.localScale -= scaleChange;
             transform.localPosition += positionChange;*/
-            color.a -= Time.deltaTime * 8f;
+            color.a -= Time.deltaTime * 8f * MasterTime.masterTime;
             this.GetComponent<Renderer>().material.color = color;
 
         }

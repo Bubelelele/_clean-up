@@ -9,7 +9,7 @@ public class NorthChairSpawner : MonoBehaviour
     public float spawnRateTimer = 2.2f;
     private Vector3 dirtPos;
     private float Offset = 2.1f;
-    public float newMilestone = 50f;
+    public float newMilestone = 100f;
     public GameObject player;
     public GameObject northPaperSpawner;
 
@@ -32,8 +32,11 @@ public class NorthChairSpawner : MonoBehaviour
             {
                 northPaperSpawner.GetComponent<NorthPaperSpawner>().SpawnPaperLine();
             }
-            newMilestone += newMilestone;
-            spawnRate -= 0.1f;
+            newMilestone += 100;
+            if (spawnRate > 0.4)
+            {
+                spawnRate -= 0.1f;
+            }
         }
     }
 

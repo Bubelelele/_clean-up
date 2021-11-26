@@ -7,12 +7,15 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("BuildingRotationMain");
+        AudioController.menuMusic.mute = true;
+        AudioController.clickSound.Play();
+        Time.timeScale = 1f;
+        MasterTime.masterTime = 1.0f;
         PaperMoving.onScreen = false;
         AnimationManager.isDead = false;
         ScoreController.score = 0;
         PauseMenu.GameIsPaused = false;
-        Time.timeScale = 1f;
+        SceneManager.LoadScene("BuildingRotationMain");
     }
 
     public void QuitGame()
@@ -24,16 +27,20 @@ public class MainMenu : MonoBehaviour
 
     public void Leaderboard()
     {
+        AudioController.clickSound.Play();
         SceneManager.LoadScene(2);
     }
     public void LeaderboardFromMenu()
     {
+        AudioController.clickSound.Play();
         SceneManager.LoadScene(3);
 
     }
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("MainMenuScene");
+        Time.timeScale = 1f;
+        AudioController.clickSound.Play();
+        SceneManager.LoadScene("MainMenuUIScene");
     }
 }

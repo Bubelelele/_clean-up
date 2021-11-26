@@ -6,50 +6,41 @@ using UnityEngine.UI;
 public class ScrollingTexture : MonoBehaviour
 {
     public GameObject quadGameObject;
-    private Renderer quadRenderer;
+    public Renderer quadRenderer;
     public static float milestone;
     public Text height;
     public static string heightTotal;
-    public static float masterTime;
     public int lbHeight;
+    public static int offset;
 
-    public float scrollSpeed = 2.27f;
+    static public float scrollSpeed = 2.27f;
 
     void Start()
     {
         milestone = 50f;
-        masterTime = 1f;
         quadRenderer = quadGameObject.GetComponent<Renderer>();
     }
 
     void Update()
     {
-        if (PauseMenu.GameIsPaused == false)
-        {
-            Time.timeScale = masterTime;
-        }
-        
+        offset = (int)quadRenderer.material.mainTextureOffset.y;
         if (AnimationManager.isDead == true)
         {
-            scrollSpeed = 0f;
+            MasterTime.masterTime = 0f;
             heightTotal = ((int)quadRenderer.material.mainTextureOffset.y).ToString() + "m";
             lbHeight = ((int)quadRenderer.material.mainTextureOffset.y);
             PlayerPrefs.SetInt("height", lbHeight);
             PlayerPrefs.SetInt("score", ScoreController.score);
         }
-        Vector2 textureOffset = new Vector2(0f, Time.deltaTime * scrollSpeed);
+        Vector2 textureOffset = new Vector2(0f, Time.deltaTime * scrollSpeed * MasterTime.masterTime);
         quadRenderer.material.mainTextureOffset += textureOffset;
 
         if (quadRenderer.material.mainTextureOffset.y > milestone)
         {
             //scrollSpeed *= 1.5f;
-            masterTime *= 1.15f;
+            MasterTime.masterTime *= 1.15f;
             milestone += 100f;
-        }
-
-        if (masterTime > 3f)
-        {
-            masterTime = 3f;
+            Debug.Log("Master time is now: " + MasterTime.masterTime);
         }
 
         height.text = ((int)quadRenderer.material.mainTextureOffset.y).ToString() + "m";

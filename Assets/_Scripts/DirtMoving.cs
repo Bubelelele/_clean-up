@@ -19,7 +19,7 @@ public class DirtMoving : MonoBehaviour
         if (AnimationManager.isDead == false)
             {
 
-            Vector3 positionChange = new Vector3(0f, Time.deltaTime * dirtSpeed, 0f);
+            Vector3 positionChange = new Vector3(0f, Time.deltaTime * dirtSpeed * MasterTime.masterTime, 0f);
             transform.position += positionChange;
 
             if (gameObject.transform.position.y < -5)

@@ -5,17 +5,12 @@ using UnityEngine;
 public class ParticlePosition : MonoBehaviour
 {
     public GameObject superBleach;
-    public GameObject Cleaner;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
+    //This script is literally just to have the particles follow the superbleach.
+    //If you make the particles a child of the super bleach it messes everything up, thus this exists.
     void Update()
     {
         transform.position = superBleach.transform.position;
-        transform.rotation = Cleaner.transform.rotation;
+        transform.rotation = superBleach.transform.rotation;
     }
 }
