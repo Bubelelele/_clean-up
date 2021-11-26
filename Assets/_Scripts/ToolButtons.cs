@@ -87,11 +87,11 @@ public class ToolButtons : MonoBehaviour
             longButton.GetComponent<Button>().interactable = true;
         }
 
-        Debug.Log("longCooldown: " + longCooldown);
+       /* Debug.Log("longCooldown: " + longCooldown);
         Debug.Log("wideCooldown: " + wideCooldown);
         Debug.Log("longCooldown: " + longCooldown);
         Debug.Log("longTimer: " + longTimer);
-        Debug.Log("wideTimer: " + wideTimer);
+        Debug.Log("wideTimer: " + wideTimer);*/
 
         if (AnimationManager.isDead)
         {

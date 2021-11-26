@@ -3,7 +3,9 @@ guid: 73587883cd9d7d24ba20d6fc3b12e754
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Day: {fileID: 2100000, guid: fb623f497be527644b93cd224e83b870, type: 2}
+  - Night: {fileID: 2100000, guid: 0a35ac4092f800042a42dacbdaa19257, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
