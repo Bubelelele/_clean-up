@@ -45,7 +45,7 @@ public class HighscoreTable : MonoBehaviour
         {
             // There's no stored table, initialize
             Debug.Log("Initializing table with default values...");
-            /*            AddHighscoreEntry(1000000, "CMK");
+            /*          AddHighscoreEntry(1000000, "CMK");
                         AddHighscoreEntry(897621, "JOE");
                         AddHighscoreEntry(872931, "DAV");
                         AddHighscoreEntry(785123, "CAT");
@@ -82,7 +82,7 @@ public class HighscoreTable : MonoBehaviour
 
     private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList)
     {
-        float templateHeight = 31f;
+        float templateHeight = 100f;
         Transform entryTransform = Instantiate(entryTemplate, container);
         RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
         entryRectTransform.anchoredPosition = new Vector2(0, -templateHeight * transformList.Count);
@@ -117,10 +117,10 @@ public class HighscoreTable : MonoBehaviour
         // Highlight First
         if (rank == 1)
         {
-            entryTransform.Find("posText").GetComponent<Text>().color = Color.green;
-            entryTransform.Find("scoreText").GetComponent<Text>().color = Color.green;
-            entryTransform.Find("nameText").GetComponent<Text>().color = Color.green;
-            entryTransform.Find("heightText").GetComponent<Text>().color = Color.green;
+            entryTransform.Find("posText").GetComponent<Text>().color = Color.white;
+            entryTransform.Find("scoreText").GetComponent<Text>().color = Color.white;
+            entryTransform.Find("nameText").GetComponent<Text>().color = Color.white;
+            entryTransform.Find("heightText").GetComponent<Text>().color = Color.white;
         }
 
         // Set tropy
