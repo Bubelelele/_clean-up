@@ -116,7 +116,7 @@ public class EastWallMovementController : MonoBehaviour
                             target = rightLane;
                             moving = true;
 
-                            if (target == northEastCorner.transform.position)
+                            if (target == northEastCorner.transform.position && TutorialController.canRotate == true)
                             {
                                 northEastCorner.GetComponent<NorthEastCornerRotationController>().rotating = true;
                             }
@@ -126,7 +126,7 @@ public class EastWallMovementController : MonoBehaviour
                         {   //Left swipe
                             target = leftLane;
                             moving = true;
-                            if (target == southEastCorner.transform.position)
+                            if (target == southEastCorner.transform.position && TutorialController.canRotate == true)
                             {
                                 southEastCorner.GetComponent<SouthEastCornerRotationController>().rotating = true;
                             }

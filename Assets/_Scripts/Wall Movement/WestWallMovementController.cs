@@ -119,7 +119,7 @@ public class WestWallMovementController : MonoBehaviour
                         {   //Right swipe
                             target = rightLane;
                             moving = true;
-                            if (target == southWestCorner.transform.position)
+                            if (target == southWestCorner.transform.position && TutorialController.canRotate == true)
                             {
                                 southWestCorner.GetComponent<SouthWestCornerRotationController>().rotating = true;
                             }  
@@ -129,7 +129,7 @@ public class WestWallMovementController : MonoBehaviour
                         {   //Left swipe
                             target = leftLane;
                             moving = true;   
-                            if (target == northWestCorner.transform.position)
+                            if (target == northWestCorner.transform.position && TutorialController.canRotate == true)
                             {
                                 northWestCorner.GetComponent<NorthWestCornerRotationController>().rotating = true;
                             }

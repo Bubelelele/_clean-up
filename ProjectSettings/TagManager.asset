@@ -10,6 +10,9 @@ TagManager:
   - Long Tool
   - Wide Tool
   - OpenWindow
+  - Dirt
+  - Line
+  - BleachLine
   layers:
   - Default
   - TransparentFX

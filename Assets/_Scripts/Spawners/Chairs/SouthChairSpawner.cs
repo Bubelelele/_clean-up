@@ -15,34 +15,37 @@ public class SouthChairSpawner : MonoBehaviour
 
     void Update()
     {
-        spawnRateTimer -= Time.smoothDeltaTime;
-
-        if (spawnRateTimer < 0)
+        if (TutorialController.tutorialComplete == true)
         {
-            SpawnDirt();
-            spawnRateTimer = spawnRate;
-        }
+            spawnRateTimer -= Time.smoothDeltaTime;
 
-        if (player.GetComponent<WallChecker>().wall == "south" && ScrollingTexture.milestone > newMilestone)
-        {
-            if (Random.Range(0, 2) == 0)
+            if (spawnRateTimer < 0)
             {
-                SpawnLine();
-            } else
-            {
-                southPaperSpawner.GetComponent<SouthPaperSpawner>().SpawnPaperLine();
+                SpawnDirt();
+                spawnRateTimer = spawnRate;
             }
-            
-            newMilestone += 100;
 
-            if (spawnRate > 0.4)
+            if (player.GetComponent<WallChecker>().wall == "south" && ScrollingTexture.milestone > newMilestone)
             {
-                spawnRate -= 0.1f;
+                if (Random.Range(0, 2) == 0)
+                {
+                    SpawnLine();
+                } else
+                {
+                    southPaperSpawner.GetComponent<SouthPaperSpawner>().SpawnPaperLine();
+                }
+                
+                newMilestone += 100;
+
+                if (spawnRate > 0.4)
+                {
+                    spawnRate -= 0.1f;
+                }
             }
         }
     }
 
-    void SpawnLine()
+    public void SpawnLine()
     {
         for (int i = 1; i < 6; i++)
         {

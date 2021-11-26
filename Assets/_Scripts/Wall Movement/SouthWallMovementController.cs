@@ -9,6 +9,7 @@ public class SouthWallMovementController : MonoBehaviour
     public Vector3 corner, leftLane, rightLane;
     private string currentWall = "";
     private bool moving = false;
+    public static bool tutorialMoving = false;
 
 
     private Vector3 fp;   //First touch position
@@ -97,7 +98,7 @@ public class SouthWallMovementController : MonoBehaviour
                 fp = touch.position;
                 lp = touch.position;
             }
-            if (touch.phase == TouchPhase.Ended && !moving && currentWall == "south")
+            if (touch.phase == TouchPhase.Ended && !moving && currentWall == "south" && TutorialController.canClean == true)
             {   //It's a tap as the drag distance is less than 20% of the screen height
                 CleaningAction.startedCleaning = true;
                 CleaningAction.loseDurability = true;
@@ -112,25 +113,29 @@ public class SouthWallMovementController : MonoBehaviour
                 {          
                     if (Mathf.Abs(lp.x - fp.x) > Mathf.Abs(lp.y - fp.y) && !moving && currentWall == "south")
                     {   
-                        if ((lp.x > fp.x))  
+                        if ((lp.x > fp.x) && TutorialController.canMove == true)  
                         {   //Right swipe
+                            tutorialMoving = true;
                             target = rightLane;
                             moving = true;
                             
-                            if (target == southEastCorner.transform.position)
+                            if (target == southEastCorner.transform.position && TutorialController.canRotate == true)
                             {
                                 southEastCorner.GetComponent<SouthEastCornerRotationController>().rotating = true;
+                                TutorialController.hasRotated = true;
                             }
                             Debug.Log("Right Swipe");
                         }
-                        else
+                        else if (TutorialController.canMove == true)
                         {   //Left swipe
+                            tutorialMoving = true;
                             target = leftLane;
                             moving = true;
 
-                            if (target == southWestCorner.transform.position)
+                            if (target == southWestCorner.transform.position && TutorialController.canRotate == true)
                             {
                                 southWestCorner.GetComponent<SouthWestCornerRotationController>().rotating = true;
+                                TutorialController.hasRotated = true;
                             }
                             Debug.Log("Left Swipe");
                         }
