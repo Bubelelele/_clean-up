@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BuildingRotationMain.unity
     guid: b55e9797078d06742b670941b74ab7eb
+  - enabled: 0
+    path: Assets/HighscoreTable/GameScene_HighscoreTableOLD.unity
+    guid: 7b983534fcd6adb4d8ec50e55837c14a
   - enabled: 1
     path: Assets/HighscoreTable/GameScene_HighscoreTable.unity
-    guid: 7b983534fcd6adb4d8ec50e55837c14a
+    guid: 420d3cb1d7b7f934e879113702eb9240
   - enabled: 1
     path: Assets/HighscoreTable/Leaderboard from Menu.unity
     guid: a0923fe39ddaf7c4dbac32a9d45239b9
