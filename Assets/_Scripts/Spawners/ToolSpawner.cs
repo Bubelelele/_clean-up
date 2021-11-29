@@ -19,6 +19,10 @@ public class ToolSpawner : MonoBehaviour
         cleaner = GameObject.Find("Cleaner");
         wideCleaner = GameObject.Find("WideCleaner");
         longCleaner = GameObject.Find("LongCleaner");
+
+        TutorialController.canMove = true;
+        TutorialController.canRotate = true;
+        TutorialController.canClean = true;
     }
 
     void Start()
