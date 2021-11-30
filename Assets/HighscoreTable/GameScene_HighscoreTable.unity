@@ -555,8 +555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f281e6fa0c3c89947a22aac9de1bc66d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayScore: {fileID: 1393415010}
-  getName: {fileID: 1578215087}
+  displayScore: {fileID: 170808147}
+  getName: {fileID: 293917}
   submitButton: {fileID: 2088642196}
   scrollSize: {fileID: 1423130891}
 --- !u!1 &79197617
