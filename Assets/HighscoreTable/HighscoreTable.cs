@@ -26,6 +26,7 @@ public class HighscoreTable : MonoBehaviour
     public InputField getName;
     public Button submitButton;
     public static string scoreCombination;
+    public RectTransform scrollSize;
 
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class HighscoreTable : MonoBehaviour
         scoreCombination = PlayerPrefs.GetInt("score").ToString() + "pts, " + PlayerPrefs.GetInt("height").ToString() + "m";
         displayScore.text = scoreCombination;
 
-        entryContainer = transform.Find("highscoreEntryContainer");
+        entryContainer = transform.Find("Mask").Find("highscoreEntryContainer");
         entryTemplate = entryContainer.Find("highscoreEntryTemplate");
 
         entryTemplate.gameObject.SetActive(false);
@@ -45,7 +46,7 @@ public class HighscoreTable : MonoBehaviour
         {
             // There's no stored table, initialize
             Debug.Log("Initializing table with default values...");
-            /*            AddHighscoreEntry(1000000, "CMK");
+            /*          AddHighscoreEntry(1000000, "CMK");
                         AddHighscoreEntry(897621, "JOE");
                         AddHighscoreEntry(872931, "DAV");
                         AddHighscoreEntry(785123, "CAT");
@@ -73,16 +74,21 @@ public class HighscoreTable : MonoBehaviour
 
         PlayerPrefs.SetInt("bestScore", highscores.highscoreEntryList[0].score);
 
+        //highscores.highscoreEntryList.RemoveRange(5, highscores.highscoreEntryList.Count - 5);
+
         highscoreEntryTransformList = new List<Transform>();
+
         foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList)
         {
             CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
         }
+
+        scrollSize.sizeDelta = new Vector2(512f, highscoreEntryTransformList.Count * 100 - 50);
     }
 
     private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList)
     {
-        float templateHeight = 31f;
+        float templateHeight = 100f;
         Transform entryTransform = Instantiate(entryTemplate, container);
         RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
         entryRectTransform.anchoredPosition = new Vector2(0, -templateHeight * transformList.Count);
@@ -117,10 +123,10 @@ public class HighscoreTable : MonoBehaviour
         // Highlight First
         if (rank == 1)
         {
-            entryTransform.Find("posText").GetComponent<Text>().color = Color.green;
-            entryTransform.Find("scoreText").GetComponent<Text>().color = Color.green;
-            entryTransform.Find("nameText").GetComponent<Text>().color = Color.green;
-            entryTransform.Find("heightText").GetComponent<Text>().color = Color.green;
+            entryTransform.Find("posText").GetComponent<Text>().color = Color.white;
+            entryTransform.Find("scoreText").GetComponent<Text>().color = Color.white;
+            entryTransform.Find("nameText").GetComponent<Text>().color = Color.white;
+            entryTransform.Find("heightText").GetComponent<Text>().color = Color.white;
         }
 
         // Set tropy
@@ -128,15 +134,19 @@ public class HighscoreTable : MonoBehaviour
         {
             default:
                 entryTransform.Find("trophy").gameObject.SetActive(false);
+                entryTransform.Find("Crown").gameObject.SetActive(false);
                 break;
             case 1:
                 entryTransform.Find("trophy").GetComponent<Image>().color = Color.yellow;
+                entryTransform.Find("Crown").gameObject.SetActive(true);
                 break;
             case 2:
                 entryTransform.Find("trophy").GetComponent<Image>().color = Color.white;
+                entryTransform.Find("Crown").gameObject.SetActive(false);
                 break;
             case 3:
                 entryTransform.Find("trophy").GetComponent<Image>().color = Color.grey;
+                entryTransform.Find("Crown").gameObject.SetActive(false);
                 break;
 
         }
