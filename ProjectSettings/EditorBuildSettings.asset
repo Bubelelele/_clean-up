@@ -6,21 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: e3ea96019196671419886ca19b555ba7
+  - enabled: 0
     path: Assets/Scenes/MainMenuUIScene.unity
     guid: fb44c68ff9364c94a91d455896874afe
   - enabled: 0
     path: Assets/Scenes/_MainMenuScene.unity
     guid: f8f047c68720e8d47b3e4380eb4d382d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BuildingRotationMain.unity
     guid: b55e9797078d06742b670941b74ab7eb
   - enabled: 0
     path: Assets/HighscoreTable/GameScene_HighscoreTableOLD.unity
     guid: 7b983534fcd6adb4d8ec50e55837c14a
-  - enabled: 1
+  - enabled: 0
     path: Assets/HighscoreTable/GameScene_HighscoreTable.unity
     guid: 420d3cb1d7b7f934e879113702eb9240
-  - enabled: 1
+  - enabled: 0
     path: Assets/HighscoreTable/Leaderboard from Menu.unity
     guid: a0923fe39ddaf7c4dbac32a9d45239b9
   m_configObjects: {}
