@@ -10,15 +10,14 @@ public class WestWallMovementController : MonoBehaviour
     private string currentWall = "";
     private bool moving = false;
 
-    private Vector3 fp;   //First touch position
-    private Vector3 lp;   //Last touch position
-    private float dragDistance;  //minimum distance for a swipe to be registered
+    private Vector3 fp;   // First touch position
+    private Vector3 lp;   // Last touch position
+    private float dragDistance;  // minimum distance for a swipe to be registered
     
    
 
     public float swipeRange;
     public float tapRange;
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -95,28 +94,28 @@ public class WestWallMovementController : MonoBehaviour
         if (Input.touchCount == 1) // user is touching the screen with a single touch
         {
             Touch touch = Input.GetTouch(0); // get the touch
-            if (touch.phase == TouchPhase.Began) //check for the first touch
+            if (touch.phase == TouchPhase.Began) // check for the first touch
             {
                 fp = touch.position;
                 lp = touch.position;
             }
             if (touch.phase == TouchPhase.Ended && !moving && currentWall == "west")
-            {   //It's a tap as the drag distance is less than 20% of the screen height
+            {   // It's a tap as the drag distance is less than 20% of the screen height
                 CleaningAction.startedCleaning = true;
                 CleaningAction.loseDurability = true;
                 Debug.Log("West Tap");
             }
-            else if (touch.phase == TouchPhase.Moved) //check if the finger is removed from the screen
+            else if (touch.phase == TouchPhase.Moved) // check if the finger is removed from the screen
             {
-                lp = touch.position;  //last touch position. Ommitted if you use list
+                lp = touch.position;  // last touch position. Ommitted if you use list
  
-                //Check if drag distance is greater than 20% of the screen height
+                // Check if drag distance is greater than 20% of the screen height
                 if (Mathf.Abs(lp.x - fp.x) > dragDistance && !moving || Mathf.Abs(lp.y - fp.y) > dragDistance && !moving)
                 {          
                     if (Mathf.Abs(lp.x - fp.x) > Mathf.Abs(lp.y - fp.y) && !moving && currentWall == "west")
                     {   
                         if ((lp.x > fp.x))  
-                        {   //Right swipe
+                        {   // Right swipe
                             target = rightLane;
                             moving = true;
                             if (target == southWestCorner.transform.position)
@@ -126,7 +125,7 @@ public class WestWallMovementController : MonoBehaviour
                             Debug.Log("Right Swipe");
                         }
                         else
-                        {   //Left swipe
+                        {   // Left swipe
                             target = leftLane;
                             moving = true;   
                             if (target == northWestCorner.transform.position)
@@ -143,7 +142,7 @@ public class WestWallMovementController : MonoBehaviour
         // Moves the player to the target position on the west wall.
         if (moving && target != corner)
         {
-            player.transform.position = Vector3.MoveTowards(player.transform.position, target, 7f * Time.smoothDeltaTime * MasterTime.masterTime);
+            player.transform.position = Vector3.MoveTowards(player.transform.position, target, 7f * Time.smoothDeltaTime * MasterTime.characterTime);
         }
         }
     }

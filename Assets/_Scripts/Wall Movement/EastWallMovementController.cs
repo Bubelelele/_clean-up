@@ -13,15 +13,14 @@ public class EastWallMovementController : MonoBehaviour
     private Vector2 startTouchPosition;
     private Vector2 currentPosition;
 
-    private Vector3 fp;   //First touch position
-    private Vector3 lp;   //Last touch position
-    private float dragDistance;  //minimum distance for a swipe to be registered
+    private Vector3 fp;   // First touch position
+    private Vector3 lp;   // Last touch position
+    private float dragDistance;  // Minimum distance for a swipe to be registered
 
-    // Start is called before the first frame update
     void Start()
     {
 
-        dragDistance = Screen.width * 10 / 100; //dragDistance is 10% width of the screen
+        dragDistance = Screen.width * 10 / 100; // dragDistance is 10% width of the screen
 
         // Creates an array of all lane positions of the east wall.
         lane = new []
@@ -34,7 +33,6 @@ public class EastWallMovementController : MonoBehaviour
         };
     }
 
-    // Update is called once per frame
     void Update()
     {
         currentWall = player.GetComponent<WallChecker>().wall;
@@ -91,28 +89,28 @@ public class EastWallMovementController : MonoBehaviour
         if (Input.touchCount == 1) // user is touching the screen with a single touch
         {
             Touch touch = Input.GetTouch(0); // get the touch
-            if (touch.phase == TouchPhase.Began) //check for the first touch
+            if (touch.phase == TouchPhase.Began) // check for the first touch
             {
                 fp = touch.position;
                 lp = touch.position;
             }
             if (touch.phase == TouchPhase.Ended && !moving && currentWall == "east")
-            {   //It's a tap as the drag distance is less than 20% of the screen height
+            {   // It's a tap as the drag distance is less than 20% of the screen height
                 CleaningAction.startedCleaning = true;
                 CleaningAction.loseDurability = true;
                 Debug.Log("East Tap");
             }
-            else if (touch.phase == TouchPhase.Moved) //check if the finger is removed from the screen
+            else if (touch.phase == TouchPhase.Moved) // check if the finger is removed from the screen
             {
-                lp = touch.position;  //last touch position. Ommitted if you use list
+                lp = touch.position;  // last touch position. Ommitted if you use list
  
-                //Check if drag distance is greater than 20% of the screen height
+                // Check if drag distance is greater than 20% of the screen height
                 if (Mathf.Abs(lp.x - fp.x) > dragDistance && !moving || Mathf.Abs(lp.y - fp.y) > dragDistance && !moving)
                 {          
                     if (Mathf.Abs(lp.x - fp.x) > Mathf.Abs(lp.y - fp.y) && !moving && currentWall == "east")
                     {   
                         if ((lp.x > fp.x))  
-                        {   //Right swipe
+                        {   // Right swipe
                             target = rightLane;
                             moving = true;
 
@@ -123,7 +121,7 @@ public class EastWallMovementController : MonoBehaviour
                             Debug.Log("Right Swipe");
                         }
                         else
-                        {   //Left swipe
+                        {   // Left swipe
                             target = leftLane;
                             moving = true;
                             if (target == southEastCorner.transform.position)
@@ -139,7 +137,7 @@ public class EastWallMovementController : MonoBehaviour
             // Moves the player to the target position on the east wall.
             if (moving && target != corner)
             {
-                player.transform.position = Vector3.MoveTowards(player.transform.position, target, 7f * Time.smoothDeltaTime * MasterTime.masterTime);
+                player.transform.position = Vector3.MoveTowards(player.transform.position, target, 7f * Time.smoothDeltaTime * MasterTime.characterTime);
             }
         }
     }
