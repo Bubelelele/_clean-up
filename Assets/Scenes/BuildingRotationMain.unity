@@ -8559,7 +8559,7 @@ ParticleSystem:
   m_GameObject: {fileID: 2028917384}
   serializedVersion: 7
   lengthInSec: 3
-  simulationSpeed: 3
+  simulationSpeed: 0.1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -8633,7 +8633,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 0.76
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -8686,7 +8686,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: -39.97
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9124,7 +9124,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: -1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -9178,10 +9178,10 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 4.71
+    angle: 3.28
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0
+    radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 90, y: 0, z: 0}
@@ -9264,7 +9264,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.9
+      value: 0.64
       mode: 0
       spread: 0
       speed:
@@ -9383,7 +9383,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 750
       minScalar: 10
       maxCurve:
         serializedVersion: 2
