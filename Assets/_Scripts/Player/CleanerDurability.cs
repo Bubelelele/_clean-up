@@ -17,7 +17,6 @@ public class CleanerDurability : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (CleaningAction.loseDurability == true && durabilitySwitch == false)
         {
             Durability -= 1;

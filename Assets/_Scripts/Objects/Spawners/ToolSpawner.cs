@@ -23,6 +23,9 @@ public class ToolSpawner : MonoBehaviour
 
     void Start()
     {
+        wideCleaner.SetActive(false);
+        longCleaner.SetActive(false);
+        
         if (Random.Range(0, 2) == 0)
         {
             toolToSpawn = wideTool;
