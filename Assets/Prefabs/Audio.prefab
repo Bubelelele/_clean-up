@@ -42,8 +42,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c5abc429689e6e14da411c7e82f188ad, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_PlayOnAwake: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -57,7 +57,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -822,7 +822,7 @@ MonoBehaviour:
   psuperBleach: {fileID: 6546324119963359208}
   pbirdImpact: {fileID: 8808404980440979848}
   pjanitorRockstar: {fileID: 7588824836032491884}
-  pgameLoop: {fileID: 0}
+  pgameLoop: {fileID: 6306446290846670491}
 --- !u!1 &8868376537291802553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1120,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 016f3a310e80fd048bd1358febffdc00, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
