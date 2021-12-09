@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.48279625, g: 0.5282008, b: 0.5968779, a: 1}
+  m_IndirectSpecularColor: {r: 0.48279607, g: 0.5282008, b: 0.5968779, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1375,11 +1375,6 @@ Transform:
   m_Father: {fileID: 1063019564}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &258253247 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6306446290846670491, guid: 068e82eb283d2f24cae0078b8da435df, type: 3}
-  m_PrefabInstance: {fileID: 892452464}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &262301605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3974,22 +3969,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6306446290846670491, guid: 068e82eb283d2f24cae0078b8da435df, type: 3}
-      propertyPath: m_Volume
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6306446290846670491, guid: 068e82eb283d2f24cae0078b8da435df, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6306446290846670491, guid: 068e82eb283d2f24cae0078b8da435df, type: 3}
-      propertyPath: BypassReverbZones
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7588824836032491884, guid: 068e82eb283d2f24cae0078b8da435df, type: 3}
-      propertyPath: m_Volume
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 8868376536432822736, guid: 068e82eb283d2f24cae0078b8da435df, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4034,10 +4013,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8868376536432822737, guid: 068e82eb283d2f24cae0078b8da435df, type: 3}
-      propertyPath: pgameLoop
-      value: 
-      objectReference: {fileID: 258253247}
     - target: {fileID: 8868376536432822742, guid: 068e82eb283d2f24cae0078b8da435df, type: 3}
       propertyPath: m_Name
       value: Audio
