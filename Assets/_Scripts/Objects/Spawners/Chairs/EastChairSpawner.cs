@@ -1,0 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EastChairSpawner : MonoBehaviour
+{
+    public GameObject dirtPrefab;
+    float spawnRate = 2.2f;
+    public float spawnRateTimer = 2.2f;
+    private Vector3 dirtPos;
+    private float Offset = 2.1f;
+    public float newMilestone = 100f;
+    public GameObject player;
+    public GameObject eastPaperSpawner;
+    
+    void Update()
+    {
+        spawnRateTimer -= Time.smoothDeltaTime;
+
+        if (spawnRateTimer < 0)
+        {
+            SpawnDirt();
+            spawnRateTimer = spawnRate;
+        }
+
+        if (player.GetComponent<WallChecker>().wall == "east" && ScrollingTexture.milestone > newMilestone)
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                SpawnLine();
+            } else
+            {
+                eastPaperSpawner.GetComponent<EastPaperSpawner>().SpawnPaperLine();
+            }
+            newMilestone += 100;
+            if (spawnRate > 0.4)
+            {
+                spawnRate -= 0.1f;
+            }
+        }
+    }
+
+    void SpawnLine()
+    {
+        for(int i = 1; i < 6; i++)
+        {
+            dirtPos = new Vector3(transform.position.x + 0.01f, transform.position.y - 1.35f, transform.position.z + Offset * i);
+            Instantiate(dirtPrefab, dirtPos, Quaternion.Euler(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f)));
+        }
+    }
+
+    void SpawnDirt()
+    {
+        Offset *= Random.Range(1, 6);
+        dirtPos = new Vector3(transform.position.x + 0.01f, transform.position.y - 1.35f, transform.position.z + Offset);
+        Instantiate(dirtPrefab, dirtPos, Quaternion.Euler(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f)));
+        Offset = 2.1f;
+    }
+}

@@ -19,7 +19,7 @@ public class AudioController : MonoBehaviour
         birdImpact = pbirdImpact;
         janitorRockstar = pjanitorRockstar;
 
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainMenuUIScene") && !menuMusic.isPlaying)
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MenuScene") && !menuMusic.isPlaying)
         {
             menuMusic.Play();
         }
