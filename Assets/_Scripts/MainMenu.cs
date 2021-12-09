@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
         AudioController.clickSound.Play();
         Time.timeScale = 1f;
         MasterTime.masterTime = 1.0f;
+        MasterTime.characterTime = 1.25f;
         PaperMoving.onScreen = false;
         AnimationManager.isDead = false;
         ScoreController.score = 0;

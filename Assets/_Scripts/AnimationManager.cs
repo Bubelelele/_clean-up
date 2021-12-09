@@ -59,6 +59,7 @@ public class AnimationManager : MonoBehaviour
         if (gameObject.CompareTag("OpenWindow"))
         {
             MasterTime.masterTime = 0f;
+            MasterTime.characterTime = 0f;
             BucketPowerUp.bucketDestroyed = true;
 
             transform.Find("Cleaner").gameObject.SetActive(false);
@@ -96,6 +97,7 @@ public class AnimationManager : MonoBehaviour
         transform.Find("Cleaner").gameObject.SetActive(false);
         transform.Find("LongCleaner").gameObject.SetActive(false);
         transform.Find("WideCleaner").gameObject.SetActive(false);
+        MasterTime.masterTime = 0f;
 
         Rigidbodies = GetComponentsInChildren<Rigidbody>();
 

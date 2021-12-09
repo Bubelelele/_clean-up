@@ -7,16 +7,6 @@ public class CleaningAction : MonoBehaviour
     static public bool startedCleaning = false, loseDurability = false;
     float cleaningTimer = 1f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-    private void OnTriggerEnter(Collider gameObject)
-    {
-
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -36,7 +26,7 @@ public class CleaningAction : MonoBehaviour
             if (startedCleaning == true && cleaningTimer > 0)
             {
                 cleaningTimer -= Time.deltaTime;
-                Vector3 positionChange = new Vector3(Time.fixedDeltaTime * 0, 0.05f * MasterTime.masterTime, 0);
+                Vector3 positionChange = new Vector3(Time.fixedDeltaTime * 0, 0.05f * MasterTime.characterTime, 0);
                 transform.position += positionChange;
             }
 
@@ -51,7 +41,6 @@ public class CleaningAction : MonoBehaviour
                 cleaningTimer = 1f;
             }
         }
-  
     }
     public void Clean()
     {

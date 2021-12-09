@@ -26,7 +26,7 @@ public class ScrollingTexture : MonoBehaviour
         offset = (int)quadRenderer.material.mainTextureOffset.y;
         if (AnimationManager.isDead == true)
         {
-            MasterTime.masterTime = 0f;
+            MasterTime.characterTime = 0f;
             heightTotal = ((int)quadRenderer.material.mainTextureOffset.y).ToString() + "m";
             lbHeight = ((int)quadRenderer.material.mainTextureOffset.y);
             PlayerPrefs.SetInt("height", lbHeight);
@@ -39,8 +39,10 @@ public class ScrollingTexture : MonoBehaviour
         {
             //scrollSpeed *= 1.5f;
             MasterTime.masterTime *= 1.15f;
+            MasterTime.characterTime *= 1.15f;
             milestone += 100f;
             Debug.Log("Master time is now: " + MasterTime.masterTime);
+            Debug.Log("Character time is now: " + MasterTime.characterTime);
         }
 
         height.text = ((int)quadRenderer.material.mainTextureOffset.y).ToString() + "m";
