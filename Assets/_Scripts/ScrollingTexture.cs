@@ -26,7 +26,7 @@ public class ScrollingTexture : MonoBehaviour
         offset = (int)quadRenderer.material.mainTextureOffset.y;
         if (AnimationManager.isDead == true)
         {
-            MasterTime.masterTime = 0f;
+            MasterTime.characterTime = 0f;
             heightTotal = ((int)quadRenderer.material.mainTextureOffset.y).ToString() + "m";
             lbHeight = ((int)quadRenderer.material.mainTextureOffset.y);
             PlayerPrefs.SetInt("height", lbHeight);
