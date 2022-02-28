@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
         AnimationManager.isDead = false;
         ScoreController.score = 0;
         PauseMenu.GameIsPaused = false;
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("BuildingRotationMainTesting");
     }
 
     public void QuitGame()
@@ -42,6 +42,6 @@ public class MainMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         AudioController.clickSound.Play();
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("MainMenuUIScene");
     }
 }

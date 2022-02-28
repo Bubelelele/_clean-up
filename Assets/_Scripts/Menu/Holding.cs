@@ -63,13 +63,13 @@ public class Holding : MonoBehaviour
                 leaderboard.SetActive(false);
             }
 
-        if (holding.GetBool("Holding") && Input.mousePosition.y > Screen.height * 0.48f)
+        if (holding.GetBool("Holding") && Input.mousePosition.y > Screen.height * 0.6f)
         {
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("BuildingRotationMainTesting");
         }
-        else if (holding.GetBool("Holding") && Input.mousePosition.y < Screen.height * 0.2f)
+        else if (holding.GetBool("Holding") && Input.mousePosition.y < Screen.height * 0.08f)
         {
-            SceneManager.LoadScene("MenuLeaderboardScene");
+            SceneManager.LoadScene("Leaderboard from Menu");
         }
     }
 }
