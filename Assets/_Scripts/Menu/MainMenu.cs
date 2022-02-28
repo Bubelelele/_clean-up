@@ -47,5 +47,7 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1f;
         AudioController.clickSound.Play();
         SceneManager.LoadScene("MenuScene");
+        ScoreController.score = 0;
+        PauseMenu.GameIsPaused = false;
     }
 }
