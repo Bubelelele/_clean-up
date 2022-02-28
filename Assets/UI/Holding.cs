@@ -65,7 +65,7 @@ public class Holding : MonoBehaviour
 
         if (holding.GetBool("Holding") && Input.mousePosition.y > Screen.height * 0.6f)
         {
-            SceneManager.LoadScene("BuildingRotationMain");
+            SceneManager.LoadScene("BuildingRotationMainTesting");
         }
         else if (holding.GetBool("Holding") && Input.mousePosition.y < Screen.height * 0.08f)
         {

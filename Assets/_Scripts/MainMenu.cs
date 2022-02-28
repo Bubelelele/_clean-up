@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
         AnimationManager.isDead = false;
         ScoreController.score = 0;
         PauseMenu.GameIsPaused = false;
-        SceneManager.LoadScene("BuildingRotationMain");
+        SceneManager.LoadScene("BuildingRotationMainTesting");
     }
 
     public void QuitGame()
