@@ -23,16 +23,19 @@ public class AudioController : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MenuScene") && !menuMusic.isPlaying)
         {
             menuMusic.Play();
+            gameLoop.Stop();
         }
 
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BuildingRotationMainTesting") && !gameLoop.isPlaying)
         {
+            menuMusic.Stop();
             gameLoop.Play();
         }
 
         if (AnimationManager.isDead == true || JanitorRockstar.rockstarActivated == true)
         {
             gameLoop.Stop();
+            menuMusic.Stop();
         }
     }
 }
