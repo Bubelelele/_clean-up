@@ -16,7 +16,7 @@ public class ScoreController : MonoBehaviour
     float animTimer = 1;
     float animTimer2 = 1;
     private float streakTimer = 11f;
-    private float rockstarTimer = 30f;
+    public static float rockstarTimer = 30f;
 
     public Text scoreTotal;
     public Text plus10;

@@ -27,7 +27,7 @@ public class AnimationManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
         if (!isDead)
         {
             BeginningAnimation();
@@ -152,6 +152,7 @@ public class AnimationManager : MonoBehaviour
 
     private void IntoWindowAnimation()
     {
+        ScoreController.rockstarTimer = -1f;
         player.GetComponent<Collider>().enabled = false;
         player.GetComponent<Animator>().SetBool("drag_into_window", true);
     }
