@@ -160,7 +160,7 @@ public class HighscoreTable : MonoBehaviour
         AddHighscoreEntry(PlayerPrefs.GetInt("score"), PlayerPrefs.GetInt("height"), getName.text);
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(1);
     }
     public void AddHighscoreEntry(int score, int height, string name)
     {

@@ -25,7 +25,7 @@ public class AudioController : MonoBehaviour
             menuMusic.Play();
         }
 
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("GameScene") && !gameLoop.isPlaying)
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("BuildingRotationMainTesting") && !gameLoop.isPlaying)
         {
             gameLoop.Play();
         }

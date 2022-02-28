@@ -29,12 +29,12 @@ public class MainMenu : MonoBehaviour
     public void Leaderboard()
     {
         AudioController.clickSound.Play();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
     public void LeaderboardFromMenu()
     {
         AudioController.clickSound.Play();
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(1);
 
     }
 
@@ -42,6 +42,6 @@ public class MainMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         AudioController.clickSound.Play();
-        SceneManager.LoadScene("MainMenuUIScene");
+        SceneManager.LoadScene("MenuScene");
     }
 }

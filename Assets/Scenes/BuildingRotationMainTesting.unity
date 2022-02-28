@@ -7003,11 +7003,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bed9adc946e69a418d33327878b574a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardTool: {fileID: 6391249460718938866}
-  wideTool: {fileID: 877697248}
-  longTool: {fileID: 1974859963}
-  longButton: {fileID: 1438758443}
-  wideButton: {fileID: 1961646590}
 --- !u!1 &1546004735
 GameObject:
   m_ObjectHideFlags: 0
