@@ -40,6 +40,10 @@ public class MainMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        MasterTime.masterTime = 1.0f;
+        MasterTime.characterTime = 1.25f;        
+        AnimationManager.isDead = false;
+        PaperMoving.onScreen = false;
         Time.timeScale = 1f;
         AudioController.clickSound.Play();
         SceneManager.LoadScene("MenuScene");
